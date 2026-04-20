@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chita wan オリジナルノート注文フォーム</title>
+    <title>Wanday note (ワンデーノート) 注文フォーム</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -14,8 +14,20 @@
             --text-dark: #4a4a4a;
         }
 
-        body {
-            background-color: #fefae0;
+                body {
+            /* 元の背景色（背景が透明な部分の色） */
+            background-color: #ffffff;
+
+            /* ドットの描画：#FBD9BFの円を配置 */
+            background-image: radial-gradient(#FBD9BF 50%, transparent 30%);
+
+            /* ドットの大きさと間隔の調整 */
+            /* 10px 10px にすることで、ドットの間隔を狭く、細かくしています */
+            background-size: 10px 10px;
+
+            /* 背景を固定する設定 */
+            background-attachment: fixed;
+
             color: var(--text-dark);
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
         }
