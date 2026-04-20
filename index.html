@@ -132,6 +132,36 @@
             background-color: #f8f8f8;
         }
 
+        /* LINE 友だち登録ボタンのスタイル */
+        .line-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #06C755;
+            /* LINEブランドカラー */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .line-button:hover {
+            background-color: #05a346;
+            color: white;
+        }
+
+        .line-button:active {
+            transform: translateY(1px);
+        }
+
+        .line-icon {
+            height: 20px;
+            margin-right: 8px;
+        }
+
     </style>
 </head>
 
@@ -288,10 +318,17 @@
             <!-- LINE Section (Condition) -->
             <div id="contact_line_area" class="input-group hidden">
                 <label class="block font-bold"><span class="required-tag">必須</span>LINEアカウント名</label>
-                <p class="text-xs text-gray-500 mt-1">以下のURLより『chita wan』の友だち追加を必ず行ってください。<br>
-                    <a href="https://line.me/R/ti/p/@938gsmtw#~" class="text-blue-600 underline">https://line.me/R/ti/p/@938gsmtw#~</a>
+                <p class="text-xs text-gray-500 mt-1 mb-3">
+                    以下のボタンより『chita wan』の友だち追加を必ず行ってください。
                 </p>
-                <input name="field_5870390" type="text">
+
+                <a href="https://line.me/R/ti/p/@938gsmtw#~" target="_blank" class="line-button">
+                    <img src="https://www.line-website.com/social-plugins/img/button/default/84x20.png" alt="LINE友だち追加" class="line-icon">
+                    友だち登録をする
+                </a>
+
+                <p class="text-xs text-gray-400 mt-4">登録後、お名前を入力してください：</p>
+                <input name="field_5870390" type="text" placeholder="例：山田 太郎">
             </div>
 
             <h2 class="section-title">ノート本体のデザイン選択</h2>
@@ -575,8 +612,9 @@
             <div class="input-group">
                 <label class="block font-bold"><span class="required-tag">必須</span>お支払い方法の指定</label>
                 <p class="text-xs text-gray-500 mb-2">【お支払い方法について】
-<br>「PayPal（ペイパル）」または「銀行振込」がご利用いただけます。
-<br>※PayPalをご選択いただくと、各種クレジットカードでのお支払いが可能です。</p>
+                    <br>「PayPal（ペイパル）」または「銀行振込」がご利用いただけます。
+                    <br>※PayPalをご選択いただくと、各種クレジットカードでのお支払いが可能です。
+                </p>
                 <select name="order_pay" required>
                     <option value="1">銀行振込</option>
                     <option value="4">PayPalでお支払い</option>
