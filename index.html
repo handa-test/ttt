@@ -358,6 +358,7 @@
                 <div class="preview-box" id="cover_preview">
                     <!-- assets/images/covers/cover_0.jpg ~ cover_15.jpg を想定 -->
                     <script>
+                        const coverNames = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
                         for (let i = 0; i <= 15; i++) {
                             document.write(`<div class="preview-item"><img src="assets/images/covers/cover_${i}.jpg" alt="${coverNames[i]}" title="${coverNames[i]}" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Cover+${i}'"><br>${coverNames[i]}</div>`);
                         }
