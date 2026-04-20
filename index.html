@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chita wan オリジナルノート注文フォーム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --accent-color: #ccd5ae;
+            --text-dark: #4a4a4a;
+        }
+
+        body {
+            background-color: #fefae0;
+            color: var(--text-dark);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .required-tag {
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: #fafafa;
+        }
+
+        .preview-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #eee;
+            border-radius: 8px;
+        }
+
+        .preview-item {
+            text-align: center;
+            font-size: 0.7rem;
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .preview-item img.active {
+            border-color: var(--primary-color);
+        }
+
+        input[type="text"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            transform: scale(1.2);
+            margin-right: 0.5rem;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1 class="text-2xl font-bold text-center mb-8">chita wan オリジナルノートご注文</h1>
+
+        <form action="https://business.form-mailer.jp/fm/service/Forms/confirm" method="post" name="form1" ENCTYPE="multipart/form-data" accept-charset="UTF-8">
+            <input type="hidden" name="key" value="18b632ee340160">
+            <input type="hidden" name="code" value="utf8">
+
+            <!-- 特定商取引法 -->
+            <div class="mb-6 p-4 bg-yellow-50 rounded-lg text-sm">
+                <p>特定商取引法に基づく表記は<a href="https://business.form-mailer.jp/fm/service/Forms/tokusyou/?key=18b632ee340160" target="_blank" class="text-blue-600 underline">こちらをご確認ください</a></p>
+            </div>
+
+            <h2 class="section-title">お客様情報</h2>
+
+            <!-- Name -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>お名前</label>
+                <div class="flex gap-4 mt-2">
+                    <div class="flex-1">
+                        <input name="field_5812656_sei" type="text" placeholder="姓" required>
+                    </div>
+                    <div class="flex-1">
+                        <input name="field_5812656_mei" type="text" placeholder="名" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name Kana -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>お名前(カナ)</label>
+                <div class="flex gap-4 mt-2">
+                    <div class="flex-1">
+                        <input name="field_5812862_sei" type="text" placeholder="セイ" required>
+                    </div>
+                    <div class="flex-1">
+                        <input name="field_5812862_mei" type="text" placeholder="メイ" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>電話番号</label>
+                <p class="text-xs text-gray-500 mt-1">日中連絡の取れる電話番号をお書きください。</p>
+                <input name="field_5812661" type="text" placeholder="090-0000-0000" required>
+            </div>
+
+            <!-- Address -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>お届け先のご住所</label>
+                <p class="text-xs text-gray-500 mt-1">建物名や部屋番号まで正確にご入力ください。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    <div>
+                        <span class="text-sm">郵便番号</span>
+                        <input name="field_5812660_zip" type="text" maxlength="7" placeholder="1234567" required>
+                    </div>
+                    <div>
+                        <span class="text-sm">都道府県</span>
+                        <select name="field_5812660_pref" required>
+                            <option value="">----</option>
+                            <option value="北海道">北海道</option>
+                            <option value="青森県">青森県</option>
+                            <option value="岩手県">岩手県</option>
+                            <option value="宮城県">宮城県</option>
+                            <option value="秋田県">秋田県</option>
+                            <option value="山形県">山形県</option>
+                            <option value="福島県">福島県</option>
+                            <option value="茨城県">茨城県</option>
+                            <option value="栃木県">栃木県</option>
+                            <option value="群馬県">群馬県</option>
+                            <option value="埼玉県">埼玉県</option>
+                            <option value="千葉県">千葉県</option>
+                            <option value="東京都">東京都</option>
+                            <option value="神奈川県">神奈川県</option>
+                            <option value="新潟県">新潟県</option>
+                            <option value="富山県">富山県</option>
+                            <option value="石川県">石川県</option>
+                            <option value="福井県">福井県</option>
+                            <option value="山梨県">山梨県</option>
+                            <option value="長野県">長野県</option>
+                            <option value="岐阜県">岐阜県</option>
+                            <option value="静岡県">静岡県</option>
+                            <option value="愛知県">愛知県</option>
+                            <option value="三重県">三重県</option>
+                            <option value="滋賀県">滋賀県</option>
+                            <option value="京都府">京都府</option>
+                            <option value="大阪府">大阪府</option>
+                            <option value="兵庫県">兵庫県</option>
+                            <option value="奈良県">奈良県</option>
+                            <option value="和歌山県">和歌山県</option>
+                            <option value="鳥取県">鳥取県</option>
+                            <option value="島根県">島根県</option>
+                            <option value="岡山県">岡山県</option>
+                            <option value="広島県">広島県</option>
+                            <option value="山口県">山口県</option>
+                            <option value="徳島県">徳島県</option>
+                            <option value="香川県">香川県</option>
+                            <option value="愛媛県">愛媛県</option>
+                            <option value="高知県">高知県</option>
+                            <option value="福岡県">福岡県</option>
+                            <option value="佐賀県">佐賀県</option>
+                            <option value="長崎県">長崎県</option>
+                            <option value="熊本県">熊本県</option>
+                            <option value="大分県">大分県</option>
+                            <option value="宮崎県">宮崎県</option>
+                            <option value="鹿児島県">鹿児島県</option>
+                            <option value="沖縄県">沖縄県</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm">市区町村</span>
+                    <input name="field_5812660_city" type="text" required>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm">番地</span>
+                    <input name="field_5812660_block" type="text" required>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm">マンション・ビル名</span>
+                    <input name="field_5812660_building" type="text">
+                </div>
+            </div>
+
+            <h2 class="section-title">制作デザインの確認方法</h2>
+
+            <!-- デザイン確認方法 -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>表紙デザインの確認方法</label>
+                <p class="text-xs text-gray-500 mt-1 mb-3">LINEもしくはメールにて確認データを送付します。</p>
+                <div class="flex gap-6">
+                    <label class="inline-flex items-center">
+                        <input name="field_5870394" type="radio" value="0" onclick="toggleContactFields('email')"> メール
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="field_5870394" type="radio" value="1" onclick="toggleContactFields('line')"> LINE
+                    </label>
+                </div>
+            </div>
+
+            <!-- Email Section (Condition) -->
+            <div id="contact_email_area" class="input-group hidden">
+                <label class="block font-bold"><span class="required-tag">必須</span>メールアドレス</label>
+                <input name="field_5812657" type="text" placeholder="info@example.com">
+                <input name="field_5812657_mcon" type="text" placeholder="確認用" class="mt-2">
+            </div>
+
+            <!-- LINE Section (Condition) -->
+            <div id="contact_line_area" class="input-group hidden">
+                <label class="block font-bold"><span class="required-tag">必須</span>LINEアカウント名</label>
+                <p class="text-xs text-gray-500 mt-1">以下のURLより『chita wan』の友だち追加を必ず行ってください。<br>
+                    <a href="https://line.me/R/ti/p/@938gsmtw#~" class="text-blue-600 underline">https://line.me/R/ti/p/@938gsmtw#~</a>
+                </p>
+                <input name="field_5870390" type="text">
+            </div>
+
+            <h2 class="section-title">ノート本体のデザイン選択</h2>
+
+            <!-- Cover Dropdown & Preview -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>表紙を選択してください</label>
+                <select name="field_5812907" id="cover_select" onchange="toggleDesignFields()" required>
+                    <option value="">------</option>
+                    <option value="0">Ⓐノート（写真・名前）</option>
+                    <option value="1">Ⓑカフェ風（写真・名前）</option>
+                    <option value="2">Ⓒカラフル（写真・名前）</option>
+                    <option value="3">Ⓓクラフト（写真）</option>
+                    <option value="4">Ⓔシンプル（写真）</option>
+                    <option value="5">Ⓕ肉球（写真）</option>
+                    <option value="6">Ⓖグラデーション（写真）</option>
+                    <option value="7">Ⓗストライプ（写真）</option>
+                    <option value="8">Ⓘナチュラル（写真）</option>
+                    <option value="9">Ⓙエレガント（写真）</option>
+                    <option value="10">Ⓚリボン（写真）</option>
+                    <option value="11">Ⓛデコデニム（写真）</option>
+                    <option value="12">Ⓜシンプルイラスト</option>
+                    <option value="13">Ⓝノート</option>
+                    <option value="14">Ⓞわんちゃんイラスト</option>
+                    <option value="15">Ⓟロゴ</option>
+                </select>
+
+                <!-- イメージ画像表示エリア -->
+                <div class="preview-box" id="cover_preview">
+                    <!-- assets/images/covers/cover_0.jpg ~ cover_15.jpg を想定 -->
+                    <script>
+                        const coverNames = ["ノート(写/名)", "カフェ(写/名)", "カラフル(写/名)", "クラフト(写)", "シンプル(写)", "肉球(写)", "グラデ(写)", "ストライプ(写)", "ナチュラル(写)", "エレガント(写)", "リボン(写)", "デニム(写)", "イラスト", "ノート", "わんこ", "ロゴ"];
+                        for (let i = 0; i <= 15; i++) {
+                            document.write(`<div class="preview-item"><img src="assets/images/covers/cover_${i}.jpg" alt="${coverNames[i]}" title="${coverNames[i]}" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Cover+${i}'"><br>${coverNames[i]}</div>`);
+                        }
+
+                    </script>
+                </div>
+            </div>
+
+            <!-- Photo Upload (Conditional) -->
+            <div id="photo_upload_area" class="input-group hidden">
+                <label class="block font-bold"><span class="required-tag">必須</span>写真をアップロード</label>
+                <p class="text-xs text-blue-600 font-bold mt-1">ワンちゃんの周囲に余白があるお写真をお願いします</p>
+                <input name="field_5812853" type="file" accept=".jpeg,.jpg,.heic,.png">
+                <p class="text-xs text-gray-500 mt-1">※被写体が中央に写っているものが最適です。</p>
+            </div>
+
+            <!-- Pet Name (Conditional) -->
+            <div id="pet_name_area" class="input-group hidden">
+                <label class="block font-bold"><span class="required-tag">必須</span>ワンちゃんのお名前</label>
+                <ul class="text-xs text-gray-500 mt-1 list-disc pl-5">
+                    <li>正確にご入力ください（ひらがな・カナ・ローマ字・敬称など）。</li>
+                    <li>複数匹の場合：記号「・」「/」で区切ってください。</li>
+                </ul>
+                <input name="field_5870158" type="text">
+            </div>
+
+            <h2 class="section-title">セット内容</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="input-group">
+                    <label class="block font-bold"><span class="required-tag">必須</span>わんこdataシート</label>
+                    <div class="flex gap-4 mt-2">
+                        <label><input name="field_5870317" type="radio" value="0" required>あり</label>
+                        <label><input name="field_5870317" type="radio" value="1">なし</label>
+                    </div>
+                    <div class="preview-box mt-3">
+                        <div class="preview-item">
+                            <img src="assets/images/others/dog_data.jpg" alt="わんこdataシート" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Data+Sheet'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="block font-bold"><span class="required-tag">必須</span>カレンダーシート</label>
+                    <div class="flex gap-4 mt-2">
+                        <label><input name="field_5870320" type="radio" value="0" required>あり</label>
+                        <label><input name="field_5870320" type="radio" value="1">なし</label>
+                    </div>
+                    <div class="preview-box mt-3">
+                        <div class="preview-item">
+                            <img src="assets/images/others/calendar.jpg" alt="カレンダーシート" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Calendar'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">リフィル選択</h2>
+
+            <!-- Refill 1 with Preview -->
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-1</label>
+                <select name="field_5813940" required>
+                    <option value="">------</option>
+                    <option value="0">①ドット5mm方眼（クリーム）</option>
+                    <option value="1">②6mm罫線（ホワイト）</option>
+                    <option value="2">③5mm方眼（ホワイト）</option>
+                    <option value="3">④日記シート（クリーム）</option>
+                    <option value="4">⑤白無地</option>
+                    <option value="5">⑥グレー無地</option>
+                    <option value="6">⑦クリーム無地</option>
+                    <option value="7">⑧黒無地</option>
+                    <option value="8">⑨画用紙（ホワイト）</option>
+                    <option value="9">⑩無地クラフト用紙</option>
+                </select>
+                <!-- リフィルイメージ画像 -->
+                <div class="preview-box">
+                    <script>
+                        const refillNames = ["ドット", "罫線", "方眼", "日記", "白無地", "グレー", "クリーム", "黒", "画用紙", "クラフト"];
+                        for (let i = 0; i <= 9; i++) {
+                            document.write(`<div class="preview-item">
+    <img src="assets/images/refills/refill_${i}.jpg" ...>
+</div>`);
+                        }
+
+                    </script>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="input-group">
+                    <label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-2</label>
+                    <select name="field_5870328" required>
+                        <option value="">------</option>
+                        <option value="0">①ドット5mm方眼</option>
+                        <option value="1">②6mm罫線</option>
+                        <option value="2">③5mm方眼</option>
+                        <option value="3">④日記シート</option>
+                        <option value="4">⑤白無地</option>
+                        <option value="5">⑥グレー無地</option>
+                        <option value="6">⑦クリーム無地</option>
+                        <option value="7">⑧黒無地</option>
+                        <option value="8">⑨画用紙</option>
+                        <option value="9">⑩無地クラフト</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-3</label>
+                    <select name="field_5870329" required>
+                        <option value="">------</option>
+                        <option value="0">①ドット5mm方眼</option>
+                        <option value="1">②6mm罫線</option>
+                        <option value="2">③5mm方眼</option>
+                        <option value="3">④日記シート</option>
+                        <option value="4">⑤白無地</option>
+                        <option value="5">⑥グレー無地</option>
+                        <option value="6">⑦クリーム無地</option>
+                        <option value="7">⑧黒無地</option>
+                        <option value="8">⑨画用紙</option>
+                        <option value="9">⑩無地クラフト</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 4-7 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="input-group"><label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-4</label>
+                    <select name="field_5870330" required>
+                        <option value="">------</option>
+                        <option value="0">①ドット5mm方眼</option>
+                        <option value="1">②6mm罫線</option>
+                        <option value="2">③5mm方眼</option>
+                        <option value="3">④日記シート</option>
+                        <option value="4">⑤白無地</option>
+                        <option value="5">⑥グレー無地</option>
+                        <option value="6">⑦クリーム無地</option>
+                        <option value="7">⑧黒無地</option>
+                        <option value="8">⑨画用紙</option>
+                        <option value="9">⑩無地クラフト</option>
+                    </select>
+                </div>
+                <div class="input-group"><label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-5</label>
+                    <select name="field_5870331" required>
+                        <option value="">------</option>
+                        <option value="0">①ドット5mm方眼</option>
+                        <option value="1">②6mm罫線</option>
+                        <option value="2">③5mm方眼</option>
+                        <option value="3">④日記シート</option>
+                        <option value="4">⑤白無地</option>
+                        <option value="5">⑥グレー無地</option>
+                        <option value="6">⑦クリーム無地</option>
+                        <option value="7">⑧黒無地</option>
+                        <option value="8">⑨画用紙</option>
+                        <option value="9">⑩無地クラフト</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="input-group"><label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-6</label>
+                    <select name="field_5870332" required>
+                        <option value="">------</option>
+                        <option value="0">①ドット5mm方眼</option>
+                        <option value="1">②6mm罫線</option>
+                        <option value="2">③5mm方眼</option>
+                        <option value="3">④日記シート</option>
+                        <option value="4">⑤白無地</option>
+                        <option value="5">⑥グレー無地</option>
+                        <option value="6">⑦クリーム無地</option>
+                        <option value="7">⑧黒無地</option>
+                        <option value="8">⑨画用紙</option>
+                        <option value="9">⑩無地クラフト</option>
+                    </select>
+                </div>
+                <div class="input-group"><label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-7</label>
+                    <select name="field_5870333" required>
+                        <option value="">------</option>
+                        <option value="0">①ドット5mm方眼</option>
+                        <option value="1">②6mm罫線</option>
+                        <option value="2">③5mm方眼</option>
+                        <option value="3">④日記シート</option>
+                        <option value="4">⑤白無地</option>
+                        <option value="5">⑥グレー無地</option>
+                        <option value="6">⑦クリーム無地</option>
+                        <option value="7">⑧黒無地</option>
+                        <option value="8">⑨画用紙</option>
+                        <option value="9">⑩無地クラフト</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>リングカラー</label>
+                <p class="text-xs text-gray-500 mt-1">メニューに表示されないカラーは、現在お選びいただけません。</p>
+                <select name="field_5813976" required>
+                    <option value="">------</option>
+                    <option value="0">①白</option>
+                    <option value="1">②黒</option>
+                    <option value="2">③青</option>
+                    <option value="3">④水色</option>
+                    <option value="4">⑤ピンク</option>
+                    <option value="5">⑥ゴールド</option>
+                    <option value="6">⑦アンティークゴールド</option>
+                    <option value="7">⑧メタリックシルバー</option>
+                    <option value="8">⑨メタリックイエロー</option>
+                    <option value="9">⑩メタリックブルー</option>
+                    <option value="10">⑪メタリックオレンジ</option>
+                </select>
+            </div>
+
+            <h2 class="section-title">ご注文商品・お支払い</h2>
+
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>商品名</th>
+                            <th>価格 (税込)</th>
+                            <th>注文数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ノートのみ</td>
+                            <td>1,800円<input type="hidden" name="goods_131903_price" value="1800"></td>
+                            <td>
+                                <select name="goods_131903_max" class="w-20">
+                                    <script>
+                                        for (let i = 0; i <= 50; i++) document.write(`<option value="${i}">${i}</option>`);
+
+                                    </script>
+                                </select> 冊
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ノート＋ゴムバンド</td>
+                            <td>2,000円<input type="hidden" name="goods_131902_price" value="2000"></td>
+                            <td>
+                                <select name="goods_131902_max" class="w-20">
+                                    <script>
+                                        for (let i = 0; i <= 50; i++) document.write(`<option value="${i}">${i}</option>`);
+
+                                    </script>
+                                </select> 冊
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="input-group">
+                <label class="block font-bold"><span class="required-tag">必須</span>お支払い方法の指定</label>
+                <p class="text-xs text-gray-500 mb-2">PayPal(各種カード)または銀行振込がご利用いただけます。</p>
+                <select name="order_pay" required>
+                    <option value="">------</option>
+                    <option value="1">銀行振込</option>
+                    <option value="4">PayPalでお支払い</option>
+                    <option value="99">指定なし</option>
+                </select>
+            </div>
+
+            <!-- Agreement -->
+            <div class="input-group text-center">
+                <label class="font-bold"><span class="required-tag">必須</span>個人情報の取扱いの同意</label>
+                <div class="mt-4">
+                    <label class="inline-flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
+                        <input name="field_5880382" type="checkbox" value="同意する" required> 同意する
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <input name="submit" type="submit" value="確認画面へ" class="submit-btn cursor-pointer">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        /**
+         * 要望① デザイン確認方法による表示切り替え
+         */
+        function toggleContactFields(type) {
+            const emailArea = document.getElementById('contact_email_area');
+            const lineArea = document.getElementById('contact_line_area');
+
+            if (type === 'email') {
+                emailArea.classList.remove('hidden');
+                lineArea.classList.add('hidden');
+            } else if (type === 'line') {
+                emailArea.classList.add('hidden');
+                lineArea.classList.remove('hidden');
+            }
+        }
+
+        /**
+         * 要望⑤ 表紙選択による写真・名前項目の表示切り替え
+         */
+        function toggleDesignFields() {
+            const select = document.getElementById('cover_select');
+            const val = parseInt(select.value);
+
+            const photoArea = document.getElementById('photo_upload_area');
+            const nameArea = document.getElementById('pet_name_area');
+
+            // デフォルト非表示
+            photoArea.classList.add('hidden');
+            nameArea.classList.add('hidden');
+
+            if (isNaN(val)) return;
+
+            // 0~2: 写真表示・名前表示
+            if (val >= 0 && val <= 2) {
+                photoArea.classList.remove('hidden');
+                nameArea.classList.remove('hidden');
+            }
+            // 3~11: 写真表示のみ
+            else if (val >= 3 && val <= 11) {
+                photoArea.classList.remove('hidden');
+            }
+            // 12~15: 両方非表示 (すでにhiddenなので何もしない)
+        }
+
+        // 初期化（戻るボタン対策など）
+        window.onload = function() {
+            toggleDesignFields();
+            // ラジオボタンのチェック状態を確認して表示
+            const contactRadios = document.getElementsByName('field_5870394');
+            contactRadios.forEach(r => {
+                if (r.checked) {
+                    if (r.value == "0") toggleContactFields('email');
+                    if (r.value == "1") toggleContactFields('line');
+                }
+            });
+        };
+
+    </script>
+
+</body>
+
+</html>
