@@ -346,6 +346,19 @@
 
             <!-- Cover Dropdown & Preview -->
             <div class="input-group">
+
+                <!-- イメージ画像表示エリア -->
+                <div class="preview-box" id="cover_preview">
+                    <!-- assets/images/covers/cover_0.jpg ~ cover_15.jpg を想定 -->
+                    <script>
+                        const coverNames = ["ノート(写/名)", "カフェ(写/名)", "カラフル(写/名)", "クラフト(写)", "シンプル(写)", "肉球(写)", "グラデ(写)", "ストライプ(写)", "ナチュラル(写)", "エレガント(写)", "リボン(写)", "デニム(写)", "イラスト", "ノート", "わんこ", "ロゴ"];
+                        for (let i = 0; i <= 15; i++) {
+                            document.write(`<div class="preview-item"><img src="assets/images/covers/cover_${i}.jpg" alt="${coverNames[i]}" title="${coverNames[i]}" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Cover+${i}'"><br>${coverNames[i]}</div>`);
+                        }
+
+                    </script>
+                </div>
+                
                 <label class="block font-bold"><span class="required-tag">必須</span>表紙を選択してください</label>
                 <select name="field_5812907" id="cover_select" onchange="toggleDesignFields()" required>
                     <option value="">------</option>
@@ -366,18 +379,6 @@
                     <option value="14">Ⓞわんちゃんイラスト</option>
                     <option value="15">Ⓟロゴ</option>
                 </select>
-
-                <!-- イメージ画像表示エリア -->
-                <div class="preview-box" id="cover_preview">
-                    <!-- assets/images/covers/cover_0.jpg ~ cover_15.jpg を想定 -->
-                    <script>
-                        const coverNames = ["ノート(写/名)", "カフェ(写/名)", "カラフル(写/名)", "クラフト(写)", "シンプル(写)", "肉球(写)", "グラデ(写)", "ストライプ(写)", "ナチュラル(写)", "エレガント(写)", "リボン(写)", "デニム(写)", "イラスト", "ノート", "わんこ", "ロゴ"];
-                        for (let i = 0; i <= 15; i++) {
-                            document.write(`<div class="preview-item"><img src="assets/images/covers/cover_${i}.jpg" alt="${coverNames[i]}" title="${coverNames[i]}" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Cover+${i}'"><br>${coverNames[i]}</div>`);
-                        }
-
-                    </script>
-                </div>
             </div>
 
             <!-- Photo Upload (Conditional) -->
