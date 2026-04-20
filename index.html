@@ -433,6 +433,20 @@
 
             <!-- Refill 1 with Preview -->
             <div class="input-group">
+
+                <!-- リフィルイメージ画像 -->
+                <div class="preview-box">
+                    <script>
+                        const refillNames = ["ドット", "罫線", "方眼", "日記", "白無地", "グレー", "クリーム", "黒", "画用紙", "クラフト"];
+                        for (let i = 0; i <= 9; i++) {
+                            document.write(`<div class="preview-item">
+    <img src="assets/images/refills/refill_${i}.jpg" ...>
+</div>`);
+                        }
+
+                    </script>
+                </div>
+                
                 <label class="block font-bold"><span class="required-tag">必須</span>リフィルセット-1</label>
                 <select name="field_5813940" required>
                     <option value="">------</option>
@@ -447,18 +461,7 @@
                     <option value="8">⑨画用紙（ホワイト）</option>
                     <option value="9">⑩無地クラフト用紙</option>
                 </select>
-                <!-- リフィルイメージ画像 -->
-                <div class="preview-box">
-                    <script>
-                        const refillNames = ["ドット", "罫線", "方眼", "日記", "白無地", "グレー", "クリーム", "黒", "画用紙", "クラフト"];
-                        for (let i = 0; i <= 9; i++) {
-                            document.write(`<div class="preview-item">
-    <img src="assets/images/refills/refill_${i}.jpg" ...>
-</div>`);
-                        }
 
-                    </script>
-                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
