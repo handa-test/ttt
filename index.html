@@ -1210,6 +1210,11 @@
                 addRingThumb(flowContainer, ringColorMap[ringSelect.value] || '#ddd', 'リングカラー');
             }
 
+                        const rubberBandVal = document.querySelector('input[name="field_5894070"]:checked')?.value;
+            if (rubberBandVal === '0') {
+                addThumb(flowContainer, 'assets/images/others/rubber_band.jpg', 'ゴムバンド');
+            }
+
             progressText.textContent = `${selectedRefills.filter(item => item.value !== '').length}/7セット選択済み`;
             syncVisualizerPages('data-sticky-index', 'sticky-visual-ring');
         }
