@@ -1025,6 +1025,9 @@
                 updateNotebookPreview();
                 return;
             }
+
+            forceOpenStickyPreview();
+
             const val = parseInt(selectedRadio.value, 10);
             photoArea.classList.toggle('hidden', !(val >= 0 && val <= 11));
             photoArea2.classList.toggle('hidden', val !== 8);
@@ -1184,6 +1187,19 @@
             container.appendChild(div);
         }
 
+        function forceOpenStickyPreview() {
+            const panel = document.getElementById('sticky-preview-panel');
+            const content = document.getElementById('preview-content');
+            const arrow = document.getElementById('arrow-icon');
+
+            // もし hidden クラスがついていたら（閉じいていたら）開く
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                panel.classList.add('open');
+                arrow.textContent = '▲';
+            }
+        }
+
         function updateStickyPreview() {
             const flowContainer = document.getElementById('summary-flow');
             const progressText = document.getElementById('sticky-progress-text');
@@ -1293,6 +1309,9 @@
         function bindGlobalPreviewEvents() {
             document.addEventListener('change', event => {
                 if (event.target.matches('.refill-select, input[name="field_5870317"], input[name="field_5870320"], select[name="field_5813976"], input[name="field_5893280"]')) {
+
+                    forceOpenStickyPreview();
+
                     updateStickyPreview();
                     updateNotebookPreview();
                 }
