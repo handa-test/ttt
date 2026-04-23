@@ -481,7 +481,7 @@
 
         .upload-preview-card img {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
             background: #f5f5f5;
@@ -687,6 +687,12 @@
                 <p class="text-xs text-blue-600 font-bold mt-1">ワンちゃんの周囲に余白があるお写真をお願いします</p>
                 <input id="photo_input_1" name="field_5812853" type="file" accept=".jpeg,.jpg,.heic,.png">
                 <p class="text-xs text-gray-500 mt-1">※被写体が中央に写っているものが最適です。</p>
+                <div class="upload-preview-grid">
+                    <div class="upload-preview-card" id="upload_preview_card_1">
+                        <div class="upload-preview-label">アップロード画像プレビュー</div>
+                        <img id="upload_preview_img_1" src="https://placehold.jp/24/eeeeee/999999/400x400.png?text=No+Image" alt="写真1プレビュー">
+                    </div>
+                </div>
             </div>
 
             <div id="photo_upload_area2" class="input-group hidden">
@@ -694,6 +700,12 @@
                 <p class="text-xs text-blue-600 font-bold mt-1">ワンちゃんの周囲に余白があるお写真をお願いします</p>
                 <input id="photo_input_2" name="field_5893713" type="file" accept=".jpeg,.jpg,.heic,.png">
                 <p class="text-xs text-gray-500 mt-1">※被写体が中央に写っているものが最適です。</p>
+                <div class="upload-preview-grid">
+                    <div class="upload-preview-card hidden" id="upload_preview_card_2">
+                        <div class="upload-preview-label">アップロード画像プレビュー</div>
+                        <img id="upload_preview_img_2" src="https://placehold.jp/24/eeeeee/999999/400x400.png?text=No+Image" alt="写真2プレビュー">
+                    </div>
+                </div>
             </div>
 
             <div id="pet_name_area" class="input-group hidden">
@@ -705,34 +717,21 @@
                 <input name="field_5870158" type="text">
             </div>
 
-            <div id="upload_preview_area" class="input-group hidden">
-                <label class="block font-bold">アップロード画像プレビュー</label>
-                <p class="helper-note">選択した写真を確認できます。完成イメージの補助として表示します。</p>
-                <div class="upload-preview-grid">
-                    <div class="upload-preview-card" id="upload_preview_card_1">
-                        <div class="upload-preview-label">写真1</div>
-                        <img id="upload_preview_img_1" src="https://placehold.jp/24/eeeeee/999999/400x400.png?text=No+Image" alt="写真1プレビュー">
-                    </div>
-                    <div class="upload-preview-card hidden" id="upload_preview_card_2">
-                        <div class="upload-preview-label">写真2</div>
-                        <img id="upload_preview_img_2" src="https://placehold.jp/24/eeeeee/999999/400x400.png?text=No+Image" alt="写真2プレビュー">
-                    </div>
-                </div>
-            </div>
-
             <h2 class="section-title">わんこdataとカレンダーの有無を選択してください。</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="input-group">
                     <div class="preview-box mt-3">
-                        <div class="preview-item"><img src="assets/images/others/dog_data.jpg" alt="わんこdataシート" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Data+Sheet'"></div>
+                        <div class="preview-item"><img src="assets/images/others/dog_data_omote.jpg" alt="わんこdataシート表" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Data+Sheet'"></div>
+                        <div class="preview-item"><img src="assets/images/others/dog_data_ura.jpg" alt="わんこdataシート裏" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Data+Sheet'"></div>
                     </div>
                     <label class="block font-bold"><span class="required-tag">必須</span>わんこdataシート</label>
                     <div class="flex gap-4 mt-2"><label><input name="field_5870317" type="radio" value="0" required>あり</label><label><input name="field_5870317" type="radio" value="1">なし</label></div>
                 </div>
                 <div class="input-group">
                     <div class="preview-box mt-3">
-                        <div class="preview-item"><img src="assets/images/others/calendar.jpg" alt="カレンダーシート" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Calendar'"></div>
+                        <div class="preview-item"><img src="assets/images/others/calendar_2026.jpg" alt="カレンダーシート2026" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Calendar'"></div>
+                        <div class="preview-item"><img src="assets/images/others/calendar_2027.jpg" alt="カレンダーシート2027" onerror="this.src='https://placehold.jp/24/d4a373/ffffff/100x140.png?text=Calendar'"></div>
                     </div>
                     <label class="block font-bold"><span class="required-tag">必須</span>カレンダーシート</label>
                     <div class="flex gap-4 mt-2"><label><input name="field_5870320" type="radio" value="0" required>あり</label><label><input name="field_5870320" type="radio" value="1">なし</label></div>
@@ -740,7 +739,7 @@
             </div>
 
             <h2 class="section-title">ページを7セット選択してください</h2>
-            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">※左（1セット目）から順に綴じられます。同じ種類を複数選ぶことも可能です。</p>
+            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">※左（1セット目）から順に綴じられます。同じ種類を複数選ぶことも可能です。<br>※選択される紙の素材によって、1セットあたりのページ数が異なります。あらかじめご注意ください。</p>
 
             <div class="preview-box" id="refill_reference_preview"></div>
 
@@ -906,7 +905,11 @@
 
             <div class="input-group">
                 <label class="block font-bold"><span class="required-tag">必須</span>お支払い方法の指定</label>
-                <p class="text-xs text-gray-500 mb-2">【お支払い方法について】<br>「PayPal（ペイパル）」または「銀行振込」がご利用いただけます。<br>※PayPalをご選択いただくと、各種クレジットカードでのお支払いが可能です。</p>
+                <p class="text-xs text-gray-500 mb-2">
+                    【お支払い方法について】<br>
+                    「クレジットカード/PayPal」なら、各種カードですぐにお支払いが可能です。<br>
+                    ※PayPalアカウントをお持ちでない方も、クレジットカードで決済いただけます。
+                </p>
                 <select name="order_pay" required>
                     <option value="4">クレジットカード/PayPal</option>
                     <option value="1">銀行振込</option>
@@ -948,8 +951,8 @@
         ];
 
         const refillLabels = [
-            '①ドット5mm方眼（クリーム）', '②6mm罫線（ホワイト）', '③5mm方眼（ホワイト）', '④日記シート（クリーム）',
-            '⑤白無地', '⑥グレー無地', '⑦クリーム無地', '⑧黒無地', '⑨画用紙（ホワイト）', '⑩無地クラフト用紙'
+            '', '', '', '',
+            '', '', '', '', '', ''
         ];
 
         const ringColorMap = {
@@ -1119,14 +1122,65 @@
         };
 
         function addRingThumb(container, color, label) {
+            const baseColor = color.startsWith('#') ? color : '#999';
+
             const div = document.createElement('div');
-            div.className = 'flex flex-col items-center';
+            div.className = 'flex flex-col items-center sticky-ring-item';
+
             div.innerHTML = `
-        <div class="ring-preview-thumb" aria-label="${label}">
-            <div class="ring-preview-disc" style="background:${color}; border-color:${color};"></div>
+        <div class="ring-preview-thumb" 
+             aria-label="${label}"
+             style="
+                 width: 60px;
+                 height: 60px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 background: #fdfdfd;
+                 border-radius: 8px;
+                 border: 1px solid #eee;
+                 box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+             ">
+            
+            <div class="double-ring-visual" style="
+                position: relative;
+                width: 40px;  /* 幅を広く */
+                height: 24px; /* 高さを低く */
+                display: flex;
+                flex-direction: column; /* 縦に2本並べることで「横向きのリング」にする */
+                justify-content: space-between;
+            ">
+                <div style="
+                    width: 100%;
+                    height: 8px; /* リングの太さ */
+                    background: ${baseColor};
+                    /* 向きに合わせてグラデーションの角度を180度（上から下）に変更 */
+                    background: linear-gradient(180deg, 
+                        rgba(255,255,255,0.7) 0%, 
+                        ${baseColor} 40%, 
+                        rgba(0,0,0,0.2) 90%, 
+                        ${baseColor} 100%);
+                    border-radius: 4px;
+                    box-shadow: inset 0 1px 1px rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.2);
+                "></div>
+
+                <div style="
+                    width: 100%;
+                    height: 8px;
+                    background: ${baseColor};
+                    background: linear-gradient(180deg, 
+                        rgba(255,255,255,0.7) 0%, 
+                        ${baseColor} 40%, 
+                        rgba(0,0,0,0.2) 90%, 
+                        ${baseColor} 100%);
+                    border-radius: 4px;
+                    box-shadow: inset 0 1px 1px rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.2);
+                "></div>
+            </div>
         </div>
-        <span class="thumb-label">${label}</span>
+        <span class="thumb-label" style="font-size: 11px; margin-top: 4px; color: #666;">${label}</span>
     `;
+
             container.appendChild(div);
         }
 
@@ -1148,6 +1202,8 @@
             selectedRefills.forEach(item => {
                 if (item.value !== '') addThumb(flowContainer, `assets/images/refills/refill_${item.value}.jpg`, `セット${item.page}`);
             });
+
+            addThumb(flowContainer, 'assets/images/others/back_cover.jpg', '背表紙');
 
             const ringSelect = document.querySelector('select[name="field_5813976"]');
             if (ringSelect && ringSelect.value !== '') {
