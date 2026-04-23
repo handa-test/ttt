@@ -956,17 +956,17 @@
         ];
 
         const ringColorMap = {
-    '0': '#f8f9fa', // ①白：真っ白より少しグレーを混ぜると立体感が出ます
-    '1': '#2c2c2c', // ②黒：漆黒より少しチャコールにすると質感が伝わります
-    '2': '#003399', // ③青：少し深いロイヤルブルー
-    '3': '#b0e0e6', // ④水色：パウダーブルー
-    '4': '#f4b3c2', // ⑤ピンク：上品なサクラピンク
-    '5': '#996515', // ⑥アンティークゴールド：黄土色より少し深みのある金
-    '6': '#a0a0a0', // ⑦メタリックシルバー：光沢が映える中間グレー
-    '7': '#d4af37', // ⑧メタリックイエロー：少し金に近いイエロー
-    '8': '#4682b4', // ⑨メタリックブルー：スチール感のあるブルー
-    '9': '#e67e22'  // ⑩メタリックオレンジ：深みのあるカッパー調のオレンジ
-};
+            '0': '#f8f9fa', // ①白：真っ白より少しグレーを混ぜると立体感が出ます
+            '1': '#2c2c2c', // ②黒：漆黒より少しチャコールにすると質感が伝わります
+            '2': '#003399', // ③青：少し深いロイヤルブルー
+            '3': '#b0e0e6', // ④水色：パウダーブルー
+            '4': '#f4b3c2', // ⑤ピンク：上品なサクラピンク
+            '5': '#996515', // ⑥アンティークゴールド：黄土色より少し深みのある金
+            '6': '#a0a0a0', // ⑦メタリックシルバー：光沢が映える中間グレー
+            '7': '#d4af37', // ⑧メタリックイエロー：少し金に近いイエロー
+            '8': '#4682b4', // ⑨メタリックブルー：スチール感のあるブルー
+            '9': '#e67e22' // ⑩メタリックオレンジ：深みのあるカッパー調のオレンジ
+        };
 
         function populateQuantityOptions(selectId) {
             const select = document.getElementById(selectId);
@@ -1210,7 +1210,7 @@
                 addRingThumb(flowContainer, ringColorMap[ringSelect.value] || '#ddd', 'リングカラー');
             }
 
-                        const rubberBandVal = document.querySelector('input[name="field_5894070"]:checked')?.value;
+            const rubberBandVal = document.querySelector('input[name="field_5894070"]:checked')?.value;
             if (rubberBandVal === '0') {
                 addThumb(flowContainer, 'assets/images/others/rubber_band.jpg', 'ゴムバンド');
             }
