@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お見積り計算シミュレーター</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body class="py-10 px-4">
+
+    <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">お見積りシミュレーター</h1>
+            <p class="text-gray-500 mt-2">各項目を入力するとリアルタイムで概算が表示されます</p>
+        </div>
+
+        <div class="form-card p-6 md:p-8">
+            <!-- ① ベースモデル -->
+            <div class="mb-6 pb-6 border-b border-gray-100">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">① FDCオリジナルモデルの作成</label>
+                <div class="flex items-center gap-4">
+                    <div class="flex-1 text-gray-500 text-sm">@¥40,000</div>
+                    <div class="flex items-center gap-2">
+                        <input type="number" id="base_count" value="0" min="0" oninput="calculate()" class="w-24 border border-gray-300 rounded-md px-3 py-2 text-right focus:ring-2 focus:ring-blue-500 outline-none">
+                        <span class="text-gray-600">体</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ② 背景 -->
+            <div class="mb-6 pb-6 border-b border-gray-100">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">② 背景の作成</label>
+                <div class="flex items-center gap-4">
+                    <div class="flex-1 text-gray-500 text-sm">@¥5,000</div>
+                    <div class="flex items-center gap-2">
+                        <input type="number" id="bg_count" value="0" min="0" oninput="calculate()" class="w-24 border border-gray-300 rounded-md px-3 py-2 text-right focus:ring-2 focus:ring-blue-500 outline-none">
+                        <span class="text-gray-600">種</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ③ 画像生成費 -->
+            <div class="mb-6 pb-6 border-b border-gray-100">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">③ 画像生成費 <span class="text-xs font-normal text-gray-500 ml-2">(@¥5,000 × a × b)</span></label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center justify-between bg-white p-3 rounded border border-blue-100">
+                        <span class="text-sm text-gray-600">a. 振袖柄数</span>
+                        <div class="flex items-center gap-2">
+                            <input type="number" id="pattern_a" value="0" min="0" oninput="calculate()" class="w-16 border border-gray-200 rounded px-2 py-1 text-right focus:ring-1 focus:ring-blue-400 outline-none">
+                            <span class="text-xs text-gray-500">枚</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-3 rounded border border-blue-100">
+                        <span class="text-sm text-gray-600">b. ポージング数</span>
+                        <div class="flex items-center gap-2">
+                            <input type="number" id="pose_b" value="0" min="0" oninput="calculate()" class="w-16 border border-gray-200 rounded px-2 py-1 text-right focus:ring-1 focus:ring-blue-400 outline-none">
+                            <span class="text-xs text-gray-500">種</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ④ オプション -->
+            <div class="mb-8">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">④ オプション</label>
+                <div class="space-y-3">
+                    <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="plan" value="A" checked onchange="calculate()" class="w-4 h-4 text-blue-600">
+                        <div class="ml-3 flex-1">
+                            <span class="block text-sm font-medium">RGB画像1枚のみ-背景あり</span>
+                            <span class="text-xs text-gray-500">追加費用なし / 枚数: a × b</span>
+                        </div>
+                        <div class="text-xs font-bold text-gray-400">+¥0</div>
+                    </label>
+                    <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="plan" value="B" onchange="calculate()" class="w-4 h-4 text-blue-600">
+                        <div class="ml-3 flex-1">
+                            <span class="block text-sm font-medium">RGB画像2枚-(背景あり/切り抜き)</span>
+                            <span class="text-xs text-gray-500">費用: a×b×¥1,500 / 枚数: a×b×2</span>
+                        </div>
+                        <div class="text-xs font-bold text-blue-600">+¥1,500/set</div>
+                    </label>
+                    <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="plan" value="C" onchange="calculate()" class="w-4 h-4 text-blue-600">
+                        <div class="ml-3 flex-1">
+                            <span class="block text-sm font-medium">RGB/CMYK画像各2枚,計4枚-(背景あり/切り抜き)</span>
+                            <span class="text-xs text-gray-500">費用: a×b×¥3,000 / 枚数: a×b×4</span>
+                        </div>
+                        <div class="text-xs font-bold text-blue-600">+¥3,000/set</div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 計算結果サマリー -->
+            <div class="bg-gray-50 rounded-xl p-4 mb-4 border border-gray-100">
+                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>総生成枚数:</span>
+                    <span class="font-bold text-gray-800"><span id="total_images">0</span> 枚</span>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>1素材あたりの単価:</span>
+                    <span class="font-bold text-blue-600">¥<span id="unit_price">0</span></span>
+                </div>
+            </div>
+
+            <!-- 合計金額表示 -->
+            <div class="bg-gray-900 text-white p-6 rounded-xl shadow-inner">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-medium">概算合計金額</span>
+                    <div class="text-right">
+                        <span class="text-3xl font-bold" id="total_amount">0</span>
+                        <span class="ml-1 text-sm">円</span>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="window.print()" class="w-full mt-6 py-3 border-2 border-gray-800 text-gray-800 font-bold rounded-lg hover:bg-gray-800 hover:text-white transition-colors">
+                この内容を印刷 / PDF保存
+            </button>
+        </div>
+
+        <p class="text-center text-xs text-gray-400 mt-6">※この見積もりは概算です。確定金額は正式な発注時に改めて算出いたします。</p>
+    </div>
+
+    <script>
+        function calculate() {
+            // 入力値の取得
+            const baseCount = parseInt(document.getElementById('base_count').value) || 0;
+            const bgCount = parseInt(document.getElementById('bg_count').value) || 0;
+            const patternA = parseInt(document.getElementById('pattern_a').value) || 0;
+            const poseB = parseInt(document.getElementById('pose_b').value) || 0;
+
+            // ラジオボタンの選択値
+            const plan = document.querySelector('input[name="plan"]:checked').value;
+
+            // ①・②の計算
+            const fee1 = baseCount * 40000;
+            const fee2 = bgCount * 5000;
+
+            // a × b (ベースとなる生成セット数)
+            const abProduct = patternA * poseB;
+
+            // ③ 生成費
+            const fee3 = abProduct * 5000;
+
+            // ④ オプション費用 と 枚数の計算
+            let fee4 = 0;
+            let totalImages = 0;
+
+            if (plan === 'A') {
+                fee4 = 0;
+                totalImages = abProduct; // a × b
+            } else if (plan === 'B') {
+                fee4 = abProduct * 1500;
+                totalImages = abProduct * 2; // a × b × 2
+            } else if (plan === 'C') {
+                fee4 = abProduct * 3000;
+                totalImages = abProduct * 4; // a × b × 4
+            }
+
+            // 合計
+            const total = fee1 + fee2 + fee3 + fee4;
+
+            // 1素材あたりの単価
+            const unitPrice = totalImages > 0 ? Math.floor(total / totalImages) : 0;
+
+            // 表示の更新
+            document.getElementById('total_images').innerText = totalImages.toLocaleString();
+            document.getElementById('unit_price').innerText = unitPrice.toLocaleString();
+            document.getElementById('total_amount').innerText = total.toLocaleString();
+        }
+
+        // 初期ロード時に一度計算
+        window.onload = calculate;
+
+    </script>
+</body>
+
+</html>
