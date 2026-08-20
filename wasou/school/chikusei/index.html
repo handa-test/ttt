@@ -1,0 +1,3468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="京扇きもの教室 水戸店の教室紹介。教室の雰囲気、レッスン風景、講師、アクセス、きものでお出かけのイメージをご紹介します。">
+  <title>水戸店 | 教室紹介 | 京扇きもの教室</title>
+  <style>
+    :root {
+      --bg: #fbf9f4;
+      --paper: #ffffff;
+      --ink: #27231f;
+      --muted: #746e67;
+      --line: #ded8cf;
+      --soft: #f2eee7;
+      --accent: #8f2634;
+      --accent-dark: #6f1925;
+      --accent-soft: #f4e7e9;
+      --gold: #a88d61;
+      --green: #435648;
+      --shadow: 0 18px 50px rgba(45, 36, 29, 0.08);
+      --radius: 18px;
+      --container: 1180px;
+      --header-height: 82px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 112px 0;
+    }
+
+    .section--white {
+      background: var(--paper);
+    }
+
+    .section--soft {
+      background: var(--soft);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 54px;
+    }
+
+    .section-head__main {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 32px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.45;
+      letter-spacing: 0.08em;
+    }
+
+    .lead {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0 28px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .btn::after {
+      content: "→";
+      transition: transform 0.25s ease;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn:hover::after {
+      transform: translateX(4px);
+    }
+
+    .btn--accent {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn--accent:hover {
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+    }
+
+    .btn--ghost-white {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: #fff;
+    }
+
+    .btn--ghost-white:hover {
+      border-color: #fff;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .image-placeholder {
+      display: flex;
+      min-height: 280px;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid #d2cbc2;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0)),
+        repeating-linear-gradient(45deg, #ece7df, #ece7df 14px, #f5f2ec 14px, #f5f2ec 28px);
+      color: #6f6860;
+      text-align: center;
+    }
+
+    .image-placeholder__inner {
+      max-width: 440px;
+    }
+
+    .image-placeholder__label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border: 1px solid #bdb5aa;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .image-placeholder strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #4c4741;
+      font-size: 15px;
+    }
+
+    .image-placeholder p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* =====================================================
+       Shared header: 下層ページでも共通利用を想定
+    ====================================================== */
+    .site-header {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(39, 35, 31, 0.08);
+      background: rgba(251, 249, 244, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .site-header__inner {
+      display: flex;
+      width: min(calc(100% - 40px), 1380px);
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand__mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: "Yu Mincho", serif;
+      font-size: 11px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .brand__text strong,
+    .brand__text small {
+      display: block;
+    }
+
+    .brand__text strong {
+      font-family: "Yu Mincho", serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .brand__text small {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+    }
+
+    .global-nav {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .global-nav__links {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 1.4vw, 26px);
+      white-space: nowrap;
+    }
+
+    .global-nav__links a {
+      position: relative;
+      padding: 8px 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .global-nav__links a::after {
+      position: absolute;
+      right: 0;
+      bottom: 2px;
+      left: 0;
+      height: 1px;
+      content: "";
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+
+    .global-nav__links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .global-nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .header-cta--accent {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--ink);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      position: absolute;
+      width: 19px;
+      height: 1px;
+      content: "";
+      background: #fff;
+      transition: 0.25s ease;
+    }
+
+    .menu-toggle::before {
+      transform: translateY(-6px);
+    }
+
+    .menu-toggle::after {
+      transform: translateY(6px);
+    }
+
+    .menu-toggle.is-open span {
+      opacity: 0;
+    }
+
+    .menu-toggle.is-open::before {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.is-open::after {
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 990;
+      top: var(--header-height);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      overflow-y: auto;
+      padding: 36px 24px 48px;
+      background: var(--bg);
+    }
+
+    .mobile-menu.is-open {
+      display: block;
+    }
+
+    .mobile-menu__nav {
+      display: grid;
+      gap: 0;
+      margin-bottom: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mobile-menu__nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 4px;
+      border-bottom: 1px solid var(--line);
+      font-family: "Yu Mincho", serif;
+      font-size: 17px;
+    }
+
+    .mobile-menu__nav a::after {
+      content: "→";
+      color: var(--accent);
+      font-family: sans-serif;
+    }
+
+    .mobile-menu__cta {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-menu__cta .btn {
+      width: 100%;
+    }
+
+    /* =====================================================
+       Hero
+    ====================================================== */
+    .hero {
+      position: relative;
+      min-height: calc(100svh - var(--header-height));
+      overflow: hidden;
+      background: #efe8df;
+    }
+
+    .hero__grid {
+      display: grid;
+      min-height: calc(100svh - var(--header-height));
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      padding: 80px max(44px, calc((100vw - var(--container)) / 2));
+      padding-right: 48px;
+      background:
+        radial-gradient(circle at 0 0, rgba(143, 38, 52, 0.08), transparent 38%),
+        var(--bg);
+    }
+
+    .hero__content-inner {
+      max-width: 580px;
+    }
+
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .hero__tag::before {
+      width: 26px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    .hero h1 {
+      margin-bottom: 28px;
+      font-size: clamp(40px, 5.2vw, 72px);
+      line-height: 1.45;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero__lead {
+      max-width: 500px;
+      margin-bottom: 34px;
+      color: #5f5952;
+      font-size: 15px;
+      line-height: 2.1;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero__visual {
+      position: relative;
+      min-height: 620px;
+    }
+
+    .hero__visual .image-placeholder {
+      position: absolute;
+      inset: 0;
+      min-height: 100%;
+      border: 0;
+      background:
+        linear-gradient(135deg, rgba(92, 72, 54, 0.12), rgba(255,255,255,0.08)),
+        repeating-linear-gradient(45deg, #dcd2c5, #dcd2c5 16px, #e9e1d7 16px, #e9e1d7 32px);
+    }
+
+    .hero__visual .image-placeholder__inner {
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(7px);
+    }
+
+    .hero__note {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      max-width: 260px;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(39,35,31,0.86);
+      color: #fff;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .hero__note strong {
+      color: #e0c79e;
+      white-space: nowrap;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      z-index: 3;
+      bottom: 22px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #777067;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      writing-mode: vertical-rl;
+    }
+
+    /* intro */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 84px;
+    }
+
+    .intro-copy h2 {
+      font-size: clamp(32px, 4.2vw, 52px);
+    }
+
+    .intro-copy p {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2.25;
+    }
+
+    .intro-visual {
+      display: grid;
+      grid-template-columns: 1fr 0.62fr;
+      align-items: end;
+      gap: 18px;
+    }
+
+    .intro-visual .image-placeholder:first-child {
+      min-height: 520px;
+    }
+
+    .intro-visual .image-placeholder:last-child {
+      min-height: 320px;
+      transform: translateY(42px);
+    }
+
+    /* features */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      position: relative;
+      padding: 38px 30px 34px;
+      border-top: 1px solid var(--ink);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .feature-card__no {
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      letter-spacing: 0.08em;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 18px;
+      font-size: 22px;
+      line-height: 1.6;
+    }
+
+    .feature-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* lesson */
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .lesson-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .lesson-card .image-placeholder {
+      min-height: 290px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lesson-card__body {
+      padding: 30px 32px 34px;
+    }
+
+    .lesson-card__tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .lesson-card h3 {
+      margin-bottom: 12px;
+      font-size: 25px;
+    }
+
+    .lesson-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lesson-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lesson-card__meta li {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fcfbf9;
+      color: #5e5851;
+      font-size: 11px;
+    }
+
+    .section-foot {
+      display: flex;
+      justify-content: center;
+      margin-top: 44px;
+    }
+
+    /* steps */
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .step-item {
+      min-height: 260px;
+      padding: 32px 26px;
+      background: var(--paper);
+    }
+
+    .step-item__num {
+      display: block;
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-style: italic;
+    }
+
+    .step-item h3 {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .step-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* school */
+    .school-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: stretch;
+      gap: 40px;
+    }
+
+    .school-layout > .image-placeholder {
+      min-height: 560px;
+    }
+
+    .school-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .school-item {
+      display: grid;
+      grid-template-columns: 78px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: 0.2s ease;
+    }
+
+    .school-item:hover {
+      border-color: #bbb1a3;
+      transform: translateX(3px);
+    }
+
+    .school-item__pref {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .school-item__name {
+      font-family: "Yu Mincho", serif;
+      font-size: 20px;
+    }
+
+    .school-item__arrow {
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    /* teacher */
+    .teacher-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .teacher-layout .image-placeholder {
+      min-height: 580px;
+      border-radius: 180px 180px 0 0;
+    }
+
+    .teacher-copy blockquote {
+      margin: 28px 0;
+      padding: 0 0 0 26px;
+      border-left: 1px solid var(--accent);
+      color: #4d4740;
+      font-family: "Yu Mincho", serif;
+      font-size: 20px;
+      line-height: 2;
+    }
+
+    /* voice */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .voice-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .voice-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .voice-card__avatar {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--soft);
+      color: #8e867d;
+      font-size: 9px;
+    }
+
+    .voice-card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .voice-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    /* faq */
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-button {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 42px 1fr 30px;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 4px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-q {
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .faq-button strong {
+      font-family: "Yu Mincho", serif;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .faq-icon {
+      position: relative;
+      width: 22px;
+      height: 22px;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 13px;
+      height: 1px;
+      content: "";
+      background: var(--ink);
+      transform: translate(-50%, -50%);
+    }
+
+    .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: 0.2s ease;
+    }
+
+    .faq-item.is-open .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+
+    .faq-answer {
+      display: none;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 0 4px 28px;
+    }
+
+    .faq-item.is-open .faq-answer {
+      display: grid;
+    }
+
+    .faq-a {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* CTA */
+    .closing-cta {
+      position: relative;
+      overflow: hidden;
+      background: var(--green);
+      color: #fff;
+    }
+
+    .closing-cta::before {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .closing-cta__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .closing-cta .eyebrow {
+      color: #e1c9a2;
+    }
+
+    .closing-cta h2 {
+      margin-bottom: 18px;
+      font-size: clamp(30px, 4vw, 46px);
+    }
+
+    .closing-cta p {
+      max-width: 700px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+    }
+
+    .closing-cta__buttons {
+      display: grid;
+      min-width: 260px;
+      gap: 10px;
+    }
+
+    .closing-cta__buttons .btn {
+      width: 100%;
+    }
+
+    /* =====================================================
+       Shared footer: 下層ページでも共通利用を想定
+    ====================================================== */
+    .site-footer {
+      background: #201e1b;
+      color: #fff;
+    }
+
+    .site-footer__main {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 70px;
+      padding: 70px 0 56px;
+    }
+
+    .footer-brand .brand {
+      color: #fff;
+    }
+
+    .footer-brand .brand__mark {
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .footer-brand .brand__text small {
+      color: rgba(255,255,255,0.54);
+    }
+
+    .footer-brand p {
+      max-width: 360px;
+      margin: 28px 0 0;
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 44px;
+    }
+
+    .footer-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.86);
+      font-size: 12px;
+    }
+
+    .footer-nav a::after {
+      content: "↗";
+      color: rgba(255,255,255,0.35);
+      font-size: 10px;
+    }
+
+    .site-footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.42);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* fixed mobile CTA */
+    .sp-fixed-cta {
+      position: fixed;
+      z-index: 900;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      display: none;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(39,35,31,0.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 12px 40px rgba(39,35,31,0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .sp-fixed-cta a {
+      display: flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ink);
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .sp-fixed-cta a:last-child {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 1180px) {
+      .global-nav__links {
+        gap: 12px;
+      }
+
+      .global-nav__links a {
+        font-size: 10px;
+      }
+
+      .header-cta {
+        padding: 0 12px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --header-height: 72px;
+      }
+
+      .global-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        position: relative;
+        display: inline-flex;
+      }
+
+      .hero__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__content {
+        min-height: 560px;
+        padding: 76px max(28px, calc((100vw - 760px) / 2));
+      }
+
+      .hero__visual {
+        min-height: 560px;
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .intro-grid,
+      .teacher-layout,
+      .school-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .intro-visual {
+        max-width: 760px;
+      }
+
+      .feature-grid,
+      .voice-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .step-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .school-layout > .image-placeholder {
+        min-height: 420px;
+      }
+
+      .teacher-layout .image-placeholder {
+        max-width: 680px;
+        min-height: 520px;
+      }
+
+      .closing-cta__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .closing-cta__buttons {
+        display: flex;
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+
+      .closing-cta__buttons .btn {
+        width: auto;
+      }
+
+      .site-footer__main {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 34px;
+      }
+
+      .section-head .btn {
+        margin-top: 24px;
+      }
+
+      .site-header__inner {
+        width: calc(100% - 28px);
+      }
+
+      .brand__mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand__text strong {
+        font-size: 15px;
+      }
+
+      .brand__text small {
+        font-size: 8px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero__grid {
+        min-height: auto;
+      }
+
+      .hero__content {
+        min-height: 520px;
+        padding: 62px 24px 66px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 12vw, 54px);
+      }
+
+      .hero__lead {
+        font-size: 13px;
+      }
+
+      .hero__actions .btn {
+        width: 100%;
+      }
+
+      .hero__visual {
+        min-height: 460px;
+      }
+
+      .hero__note {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        max-width: none;
+      }
+
+      .intro-grid {
+        gap: 36px;
+      }
+
+      .intro-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-visual .image-placeholder:first-child,
+      .intro-visual .image-placeholder:last-child {
+        min-height: 360px;
+        transform: none;
+      }
+
+      .intro-visual .image-placeholder:last-child {
+        display: none;
+      }
+
+      .feature-grid,
+      .lesson-grid,
+      .voice-grid,
+      .step-list {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 30px 4px;
+      }
+
+      .feature-card__no {
+        margin-bottom: 22px;
+      }
+
+      .lesson-card__body {
+        padding: 24px 22px 28px;
+      }
+
+      .step-item {
+        min-height: auto;
+      }
+
+      .school-layout > .image-placeholder {
+        min-height: 340px;
+      }
+
+      .school-item {
+        grid-template-columns: 58px 1fr auto;
+        gap: 10px;
+        padding: 18px 14px;
+      }
+
+      .school-item__name {
+        font-size: 17px;
+      }
+
+      .teacher-layout .image-placeholder {
+        min-height: 430px;
+        border-radius: 120px 120px 0 0;
+      }
+
+      .teacher-copy blockquote {
+        font-size: 17px;
+      }
+
+      .faq-button {
+        grid-template-columns: 32px 1fr 24px;
+      }
+
+      .faq-button strong {
+        font-size: 15px;
+      }
+
+      .faq-answer {
+        grid-template-columns: 32px 1fr;
+      }
+
+      .closing-cta__buttons {
+        display: grid;
+      }
+
+      .closing-cta__buttons .btn {
+        width: 100%;
+      }
+
+      .site-footer__main {
+        padding-top: 58px;
+      }
+
+      .footer-nav {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .site-footer__bottom {
+        display: block;
+        padding-bottom: 92px;
+      }
+
+      .back-to-top {
+        margin-top: 14px;
+      }
+
+      .sp-fixed-cta {
+        display: grid;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+
+
+
+    /* =====================================================
+       SCHOOL PAGE / 教室紹介ページ固有スタイル
+    ====================================================== */
+    .global-nav__links a[aria-current="page"]::after {
+      transform: scaleX(1);
+    }
+
+    .mobile-menu__nav a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    .breadcrumb {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .breadcrumb__inner {
+      display: flex;
+      min-height: 54px;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .breadcrumb__inner a:hover {
+      color: var(--accent);
+    }
+
+    .breadcrumb__sep {
+      color: #b4aca2;
+    }
+
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .page-hero::before {
+      position: absolute;
+      top: -180px;
+      left: -120px;
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(143, 38, 52, 0.10);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .page-hero__grid {
+      display: grid;
+      min-height: 590px;
+      grid-template-columns: 0.88fr 1.12fr;
+      align-items: stretch;
+    }
+
+    .page-hero__copy {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      padding: 86px 64px 86px max(44px, calc((100vw - var(--container)) / 2));
+    }
+
+    .page-hero__copy-inner {
+      max-width: 580px;
+    }
+
+    .page-hero__en {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 {
+      margin-bottom: 26px;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.45;
+      letter-spacing: 0.1em;
+    }
+
+    .page-hero__lead {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2.15;
+    }
+
+    .page-hero__visual {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .page-hero__visual .image-placeholder {
+      position: absolute;
+      inset: 0;
+      min-height: 100%;
+      border: 0;
+      background:
+        linear-gradient(135deg, rgba(89, 67, 51, 0.10), rgba(255,255,255,0.08)),
+        repeating-linear-gradient(45deg, #ded5ca, #ded5ca 16px, #ebe4db 16px, #ebe4db 32px);
+    }
+
+    .page-hero__visual .image-placeholder__inner {
+      max-width: 470px;
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.74);
+      backdrop-filter: blur(7px);
+    }
+
+    .page-hero__caption {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      max-width: 300px;
+      padding: 14px 16px;
+      background: rgba(39,35,31,0.86);
+      color: rgba(255,255,255,0.82);
+      font-size: 10px;
+      line-height: 1.75;
+    }
+
+    .page-hero__caption strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #e0c79e;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+    }
+
+    .school-intro {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+      gap: 84px;
+    }
+
+    .school-intro__copy h2 {
+      margin-bottom: 24px;
+      font-size: clamp(32px, 4vw, 50px);
+    }
+
+    .school-intro__copy p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2.2;
+    }
+
+    .school-intro__note {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-left: 2px solid var(--accent);
+      background: var(--accent-soft);
+      color: #5c4b4e;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .school-jump {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .school-jump a {
+      display: flex;
+      min-height: 142px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px 20px 18px;
+      background: var(--paper);
+      transition: 0.22s ease;
+    }
+
+    .school-jump a:hover {
+      position: relative;
+      z-index: 1;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .school-jump__area {
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 9px;
+      font-style: italic;
+      letter-spacing: 0.12em;
+      transition: color 0.22s ease;
+    }
+
+    .school-jump a:hover .school-jump__area {
+      color: #f0ccd2;
+    }
+
+    .school-jump strong {
+      font-family: "Yu Mincho", "Noto Serif JP", serif;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .school-jump__arrow {
+      align-self: flex-end;
+      color: var(--accent);
+      font-size: 18px;
+      transition: color 0.22s ease, transform 0.22s ease;
+    }
+
+    .school-jump a:hover .school-jump__arrow {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .school-index-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .school-index-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .school-cards {
+      display: grid;
+      gap: 34px;
+    }
+
+    .school-card {
+      display: grid;
+      min-height: 470px;
+      grid-template-columns: 1.04fr 0.96fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      scroll-margin-top: calc(var(--header-height) + 28px);
+    }
+
+    .school-card:nth-child(even) {
+      grid-template-columns: 0.96fr 1.04fr;
+    }
+
+    .school-card:nth-child(even) .school-card__visual {
+      order: 2;
+    }
+
+    .school-card:nth-child(even) .school-card__body {
+      order: 1;
+    }
+
+    .school-card__visual {
+      min-height: 470px;
+    }
+
+    .school-card__visual .image-placeholder {
+      height: 100%;
+      min-height: 470px;
+      border: 0;
+    }
+
+    .school-card__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px 52px;
+    }
+
+    .school-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .school-card__meta::before {
+      width: 28px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    .school-card h3 {
+      margin-bottom: 16px;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.5;
+    }
+
+    .school-card__lead {
+      margin-bottom: 20px;
+      color: #514b45;
+      font-family: "Yu Mincho", "Noto Serif JP", serif;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .school-card__text {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .school-card__facts {
+      display: grid;
+      gap: 0;
+      margin: 0 0 26px;
+      padding: 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .school-card__facts li {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .school-card__facts strong {
+      color: #514b45;
+      font-size: 10px;
+    }
+
+    .school-card__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .school-card__actions .btn {
+      min-height: 50px;
+      padding: 0 22px;
+      font-size: 12px;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .choice-card {
+      min-height: 300px;
+      padding: 36px 30px 32px;
+      border-top: 1px solid var(--ink);
+      background: rgba(255,255,255,0.66);
+    }
+
+    .choice-card__no {
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .choice-card h3 {
+      margin-bottom: 16px;
+      font-size: 22px;
+      line-height: 1.6;
+    }
+
+    .choice-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .detail-preview {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      align-items: center;
+      gap: 78px;
+    }
+
+    .detail-preview__visual {
+      min-height: 520px;
+    }
+
+    .detail-preview__visual .image-placeholder {
+      min-height: 520px;
+      border-radius: 180px 180px 0 0;
+    }
+
+    .detail-preview h2 {
+      margin-bottom: 22px;
+      font-size: clamp(31px, 4vw, 48px);
+    }
+
+    .detail-preview__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 30px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .detail-preview__item {
+      min-height: 150px;
+      padding: 24px;
+      background: var(--paper);
+    }
+
+    .detail-preview__item span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 10px;
+      font-style: italic;
+      letter-spacing: 0.12em;
+    }
+
+    .detail-preview__item h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .detail-preview__item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.85;
+    }
+
+    @media (max-width: 1024px) {
+      .page-hero__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero__copy {
+        min-height: 460px;
+        padding: 72px max(28px, calc((100vw - 760px) / 2));
+      }
+
+      .page-hero__visual {
+        min-height: 520px;
+      }
+
+      .school-intro,
+      .detail-preview {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .school-jump {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .school-card,
+      .school-card:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .school-card:nth-child(even) .school-card__visual,
+      .school-card:nth-child(even) .school-card__body {
+        order: initial;
+      }
+
+      .school-card__visual,
+      .school-card__visual .image-placeholder {
+        min-height: 390px;
+      }
+
+      .choice-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .detail-preview__visual {
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .breadcrumb__inner {
+        min-height: 48px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .page-hero__copy {
+        min-height: 390px;
+        padding: 58px 24px 62px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(36px, 11vw, 50px);
+      }
+
+      .page-hero__lead {
+        font-size: 13px;
+      }
+
+      .page-hero__visual {
+        min-height: 410px;
+      }
+
+      .page-hero__caption {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        max-width: none;
+      }
+
+      .school-intro {
+        gap: 32px;
+      }
+
+      .school-jump {
+        grid-template-columns: 1fr;
+      }
+
+      .school-jump a {
+        min-height: 92px;
+        padding: 16px 18px;
+      }
+
+      .school-index-head {
+        display: block;
+        margin-bottom: 32px;
+      }
+
+      .school-index-head p {
+        margin-top: 18px;
+      }
+
+      .school-cards {
+        gap: 22px;
+      }
+
+      .school-card__visual,
+      .school-card__visual .image-placeholder {
+        min-height: 300px;
+      }
+
+      .school-card__body {
+        padding: 32px 22px 34px;
+      }
+
+      .school-card__lead {
+        font-size: 15px;
+      }
+
+      .school-card__facts li {
+        grid-template-columns: 76px 1fr;
+      }
+
+      .school-card__actions {
+        display: grid;
+      }
+
+      .school-card__actions .btn {
+        width: 100%;
+      }
+
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .choice-card {
+        min-height: auto;
+        padding: 30px 4px;
+      }
+
+      .choice-card__no {
+        margin-bottom: 22px;
+      }
+
+      .detail-preview__visual,
+      .detail-preview__visual .image-placeholder {
+        min-height: 400px;
+      }
+
+      .detail-preview__visual .image-placeholder {
+        border-radius: 120px 120px 0 0;
+      }
+
+      .detail-preview__list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+
+    /* =====================================================
+       School detail / 水戸店 個別ページ
+    ====================================================== */
+    .store-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .store-hero__grid {
+      display: grid;
+      min-height: 610px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
+    }
+
+    .store-hero__copy {
+      display: flex;
+      align-items: center;
+      padding: 70px 7vw 78px max(48px, calc((100vw - var(--container)) / 2));
+      background: var(--bg);
+    }
+
+    .store-hero__copy-inner {
+      max-width: 570px;
+    }
+
+    .store-hero__area {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+
+    .store-hero__area::before {
+      width: 34px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    .store-hero h1 {
+      margin-bottom: 22px;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.1;
+      letter-spacing: 0.1em;
+    }
+
+    .store-hero__sub {
+      margin-bottom: 22px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+    }
+
+    .store-hero__lead {
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2.15;
+    }
+
+    .store-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .store-hero__visual {
+      position: relative;
+      min-height: 610px;
+    }
+
+    .store-hero__visual .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 610px;
+      border: 0;
+    }
+
+    .store-hero__badge {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      width: min(285px, calc(100% - 56px));
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,0.58);
+      background: rgba(35,32,28,0.82);
+      color: #fff;
+      font-size: 10px;
+      line-height: 1.8;
+      backdrop-filter: blur(8px);
+    }
+
+    .store-hero__badge strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #e9d9bc;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+    }
+
+    .store-facts {
+      position: relative;
+      z-index: 2;
+      margin-top: -1px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .store-facts__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .store-fact {
+      min-height: 124px;
+      padding: 26px 26px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .store-fact:last-child {
+      border-right: 0;
+    }
+
+    .store-fact span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .store-fact strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .store-fact p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .store-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      align-items: center;
+      gap: 78px;
+    }
+
+    .store-intro__visual {
+      display: grid;
+      grid-template-columns: 1fr 0.62fr;
+      align-items: end;
+      gap: 18px;
+    }
+
+    .store-intro__visual .image-placeholder:first-child {
+      min-height: 560px;
+    }
+
+    .store-intro__visual .image-placeholder:last-child {
+      min-height: 320px;
+      margin-bottom: -42px;
+    }
+
+    .store-intro__copy h2 {
+      font-size: clamp(32px, 4.2vw, 50px);
+    }
+
+    .store-intro__copy p:not(.lead) {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .store-intro__note {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--gold);
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .lesson-scenes {
+      display: grid;
+      grid-template-columns: 1.35fr 0.82fr 0.82fr;
+      gap: 16px;
+    }
+
+    .lesson-scene {
+      min-width: 0;
+    }
+
+    .lesson-scene .image-placeholder {
+      min-height: 420px;
+    }
+
+    .lesson-scene:not(:first-child) .image-placeholder {
+      min-height: 320px;
+    }
+
+    .lesson-scene__caption {
+      padding: 18px 3px 0;
+    }
+
+    .lesson-scene__caption span {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .lesson-scene__caption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .lesson-scene__caption p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    .store-table {
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .store-table__row {
+      display: grid;
+      grid-template-columns: 138px 1fr;
+      gap: 28px;
+      padding: 20px 2px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .store-table__row dt {
+      margin: 0;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .store-table__row dd {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .dummy-tag {
+      display: inline-flex;
+      margin-left: 8px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 8px;
+      font-weight: 700;
+      vertical-align: 1px;
+    }
+
+    .map-placeholder {
+      min-height: 510px;
+      border: 1px solid #d2cbc2;
+      background:
+        linear-gradient(rgba(255,255,255,0.52), rgba(255,255,255,0.52)),
+        repeating-linear-gradient(0deg, transparent, transparent 52px, rgba(111,104,96,0.12) 52px, rgba(111,104,96,0.12) 53px),
+        repeating-linear-gradient(90deg, #ece7df, #ece7df 52px, #e3ddd4 52px, #e3ddd4 53px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px;
+    }
+
+    .map-placeholder__pin {
+      display: grid;
+      width: 94px;
+      height: 94px;
+      place-items: center;
+      margin: 0 auto 16px;
+      border-radius: 50% 50% 50% 0;
+      background: var(--accent);
+      color: #fff;
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 18px;
+      transform: rotate(-45deg);
+    }
+
+    .map-placeholder__pin span {
+      transform: rotate(45deg);
+    }
+
+    .map-placeholder strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .map-placeholder p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .teacher-detail {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.82fr) minmax(0, 1.18fr);
+      align-items: center;
+      gap: 82px;
+    }
+
+    .teacher-detail .image-placeholder {
+      min-height: 600px;
+    }
+
+    .teacher-detail__name {
+      display: flex;
+      align-items: flex-end;
+      gap: 18px;
+      margin: 28px 0 26px;
+    }
+
+    .teacher-detail__name strong {
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 27px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+
+    .teacher-detail__name span {
+      padding-bottom: 5px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+    }
+
+    .teacher-detail__message {
+      position: relative;
+      margin: 0 0 30px;
+      padding: 28px 30px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--muted);
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 14px;
+      line-height: 2.1;
+    }
+
+    .outing-lead {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 72px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .outing-lead__copy p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .outing-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+      min-height: 560px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .outing-feature > .image-placeholder {
+      min-height: 560px;
+      border: 0;
+    }
+
+    .outing-feature__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 54px 46px;
+    }
+
+    .outing-feature__body span {
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+    }
+
+    .outing-feature__body h3 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      line-height: 1.55;
+    }
+
+    .outing-feature__body p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .outing-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .outing-gallery .image-placeholder {
+      min-height: 270px;
+    }
+
+    .course-banner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 52px;
+      padding: 44px 48px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .course-banner h3 {
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .course-banner p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .local-faq {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .local-faq__item {
+      border-top: 1px solid var(--line);
+    }
+
+    .local-faq__item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .local-faq__question {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 34px 1fr 30px;
+      gap: 14px;
+      align-items: center;
+      padding: 24px 4px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .local-faq__q {
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 20px;
+    }
+
+    .local-faq__question strong {
+      font-size: 13px;
+    }
+
+    .local-faq__icon {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+    }
+
+    .local-faq__icon::before,
+    .local-faq__icon::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 11px;
+      height: 1px;
+      content: "";
+      background: var(--ink);
+      transform: translate(-50%, -50%);
+    }
+
+    .local-faq__icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: 0.2s ease;
+    }
+
+    .local-faq__item.is-open .local-faq__icon::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .local-faq__answer {
+      display: none;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      padding: 0 4px 24px;
+    }
+
+    .local-faq__item.is-open .local-faq__answer {
+      display: grid;
+    }
+
+    .local-faq__a {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 20px;
+    }
+
+    .local-faq__answer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .other-schools {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .other-school {
+      position: relative;
+      min-height: 190px;
+      padding: 26px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: 0.25s ease;
+    }
+
+    .other-school:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .other-school span {
+      display: block;
+      margin-bottom: 32px;
+      color: var(--gold);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .other-school strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 23px;
+      font-weight: 500;
+    }
+
+    .other-school small {
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .other-school::after {
+      position: absolute;
+      right: 22px;
+      bottom: 18px;
+      content: "→";
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .mito-cta {
+      background: var(--accent);
+    }
+
+    .mito-cta::before {
+      position: absolute;
+      top: -100px;
+      right: -70px;
+      width: 380px;
+      height: 380px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .mito-cta .btn--accent {
+      border-color: #fff;
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .mito-cta .btn--accent:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .store-hero__grid,
+      .store-intro,
+      .info-layout,
+      .teacher-detail,
+      .outing-lead {
+        grid-template-columns: 1fr;
+      }
+
+      .store-hero__copy {
+        padding: 70px max(28px, calc((100vw - 760px) / 2));
+      }
+
+      .store-hero__visual,
+      .store-hero__visual .image-placeholder {
+        min-height: 540px;
+      }
+
+      .store-facts__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .store-fact:nth-child(2) {
+        border-right: 0;
+      }
+
+      .store-fact:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .store-intro__visual {
+        max-width: 760px;
+      }
+
+      .lesson-scenes {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lesson-scene:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .info-layout {
+        gap: 42px;
+      }
+
+      .map-placeholder {
+        min-height: 440px;
+      }
+
+      .teacher-detail {
+        gap: 46px;
+      }
+
+      .teacher-detail .image-placeholder {
+        max-width: 680px;
+        min-height: 520px;
+      }
+
+      .outing-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .outing-feature > .image-placeholder {
+        min-height: 470px;
+      }
+
+      .outing-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .outing-gallery > :last-child {
+        grid-column: 1 / -1;
+      }
+
+      .course-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .other-schools {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .store-hero__grid {
+        min-height: auto;
+      }
+
+      .store-hero__copy {
+        padding: 54px 24px 58px;
+      }
+
+      .store-hero h1 {
+        font-size: 52px;
+      }
+
+      .store-hero__actions .btn {
+        width: 100%;
+      }
+
+      .store-hero__visual,
+      .store-hero__visual .image-placeholder {
+        min-height: 440px;
+      }
+
+      .store-hero__badge {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        width: auto;
+      }
+
+      .store-facts {
+        box-shadow: none;
+      }
+
+      .store-facts__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .store-fact,
+      .store-fact:nth-child(2) {
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .store-fact:last-child {
+        border-bottom: 0;
+      }
+
+      .store-intro {
+        gap: 40px;
+      }
+
+      .store-intro__visual {
+        grid-template-columns: 1fr;
+      }
+
+      .store-intro__visual .image-placeholder:first-child {
+        min-height: 390px;
+      }
+
+      .store-intro__visual .image-placeholder:last-child {
+        display: none;
+      }
+
+      .lesson-scenes,
+      .outing-gallery,
+      .other-schools {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-scene:first-child,
+      .outing-gallery > :last-child {
+        grid-column: auto;
+      }
+
+      .lesson-scene .image-placeholder,
+      .lesson-scene:not(:first-child) .image-placeholder {
+        min-height: 350px;
+      }
+
+      .store-table__row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .map-placeholder {
+        min-height: 380px;
+      }
+
+      .teacher-detail .image-placeholder {
+        min-height: 430px;
+      }
+
+      .teacher-detail__name {
+        display: block;
+      }
+
+      .teacher-detail__name span {
+        display: block;
+        margin-top: 3px;
+      }
+
+      .teacher-detail__message {
+        padding: 22px;
+      }
+
+      .outing-feature > .image-placeholder {
+        min-height: 390px;
+      }
+
+      .outing-feature__body {
+        padding: 34px 26px;
+      }
+
+      .outing-gallery .image-placeholder {
+        min-height: 330px;
+      }
+
+      .course-banner {
+        padding: 30px 24px;
+      }
+
+      .course-banner .btn {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- =====================================================
+       COMMON HEADER / 下層ページでも共通使用想定
+  ====================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../../index.html" aria-label="京扇きもの教室 TOP">
+        <span class="brand__mark">京扇<br>教室</span>
+        <span class="brand__text">
+          <strong>京扇きもの教室</strong>
+          <small>KIMONO KYOSEN WASOU SCHOOL</small>
+        </span>
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <div class="global-nav__links">
+          <a href="../../about/index.html">京扇きもの教室とは</a>
+          <a href="../../lesson/index.html">コース・受講料</a>
+          <a href="../index.html" aria-current="page">教室紹介</a>
+          <a href="../../teacher/index.html">講師紹介</a>
+          <a href="../../faq/index.html">よくある質問</a>
+        </div>
+        <div class="global-nav__cta">
+          <a class="header-cta" href="../../contact/index.html">お問い合わせ</a>
+          <a class="header-cta header-cta--accent" href="../../apply/index.html">来店予約</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="スマートフォン用ナビゲーション">
+      <a href="../../about/index.html">京扇きもの教室とは</a>
+      <a href="../../lesson/index.html">コース・受講料</a>
+      <a href="../index.html" aria-current="page">教室紹介</a>
+      <a href="../../teacher/index.html">講師紹介</a>
+      <a href="../../faq/index.html">よくある質問</a>
+    </nav>
+    <div class="mobile-menu__cta">
+      <a class="btn btn--accent" href="../../apply/index.html">来店予約フォーム</a>
+      <a class="btn" href="../../contact/index.html">問い合わせフォーム</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <div class="container breadcrumb__inner">
+        <a href="../../index.html">TOP</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="../index.html">教室紹介</a>
+        <span class="breadcrumb__sep">/</span>
+        <span>水戸店</span>
+      </div>
+    </nav>
+
+    <!-- STORE HERO -->
+    <section class="store-hero">
+      <div class="store-hero__grid">
+        <div class="store-hero__copy">
+          <div class="store-hero__copy-inner">
+            <span class="store-hero__area">IBARAKI / MITO SCHOOL</span>
+            <h1>水戸店</h1>
+            <div class="store-hero__sub">KIMONO KYOSEN WASOU SCHOOL</div>
+            <p class="store-hero__lead">
+              着物を、自分で着られる喜びを。<br>
+              水戸店では、初めての方にも分かりやすく、
+              一人ひとりのペースに寄り添いながら着付けを学べる教室を目指します。
+            </p>
+            <div class="store-hero__actions">
+              <a class="btn btn--accent" href="../../apply/mito/index.html">水戸店を予約する</a>
+              <a class="btn" href="#access">教室情報・アクセス</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-hero__visual">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">MITO MAIN IMAGE</span>
+              <strong>水戸店で実際にレッスンしている様子を大きく掲載</strong>
+              <p>
+                明るく清潔な教室で、生徒2〜3名が鏡を見ながら着付けをしている横位置写真。<br>
+                講師が少し離れた位置から穏やかにサポートし、「自分で着る」様子が伝わる自然なカット。
+              </p>
+            </div>
+          </div>
+          <div class="store-hero__badge">
+            <strong>PHOTO DIRECTION</strong>
+            店舗外観ではなく「ここで習いたい」と感じる教室体験をFVに。着物の柄が映える、柔らかい自然光の写真を想定。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK FACTS -->
+    <section class="store-facts" aria-label="水戸店の概要">
+      <div class="container store-facts__grid">
+        <div class="store-fact">
+          <span>AREA</span>
+          <strong>茨城県・水戸エリア</strong>
+          <p>正式住所は本番情報に差し替え</p>
+        </div>
+        <div class="store-fact">
+          <span>BEGINNER</span>
+          <strong>初心者の方も歓迎</strong>
+          <p>初めて着物に触れる方を想定</p>
+        </div>
+        <div class="store-fact">
+          <span>LESSON</span>
+          <strong>少人数で丁寧に</strong>
+          <p>実際の定員・開講形式に差し替え</p>
+        </div>
+        <div class="store-fact">
+          <span>RESERVATION</span>
+          <strong>来店・体験予約</strong>
+          <p>水戸店専用フォームへ移動</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section section--white">
+      <div class="container store-intro">
+        <div class="store-intro__visual">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">CLASSROOM IMAGE 01</span>
+              <strong>教室全体の雰囲気が分かる内観写真</strong>
+              <p>鏡や着付けスペース、畳など、水戸店の実際の設備や広さが分かる引きの写真。</p>
+            </div>
+          </div>
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">DETAIL IMAGE</span>
+              <strong>帯や小物の手元カット</strong>
+              <p>教室の温度感を伝えるディテール写真。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-intro__copy">
+          <span class="eyebrow">About Mito School</span>
+          <h2>「着られた」が、<br>もっと着たくなる。</h2>
+          <p>
+            水戸店の教室紹介用ダミーテキストです。着付けに興味はあるけれど難しそう、道具の名前も分からない、そんな方でも気軽に始められる教室であることを伝える想定です。
+          </p>
+          <p>
+            ただ手順を覚えるだけでなく、ご自身の着物を楽しむこと、季節やシーンに合わせた装いを楽しむことまで、講師と一緒に少しずつ学んでいきます。
+          </p>
+          <div class="store-intro__note">
+            <strong>本番原稿で入れたい内容：</strong><br>
+            水戸店ならではの教室の特徴／どの年代の生徒が多いか／講師との距離感／店舗スタッフとの連携／実際の受講者の雰囲気など。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON SCENES -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">Lesson Scene</span>
+            <h2>水戸店のレッスン風景</h2>
+            <p class="lead">
+              「どんな雰囲気で習うのか」が伝わるように、実際の教室・講師・生徒の自然な写真を中心に見せる想定です。
+            </p>
+          </div>
+          <a class="btn" href="../../lesson/index.html">コース・受講料を見る</a>
+        </div>
+
+        <div class="lesson-scenes">
+          <article class="lesson-scene">
+            <div class="image-placeholder">
+              <div class="image-placeholder__inner">
+                <span class="image-placeholder__label">LESSON PHOTO 01</span>
+                <strong>鏡を見ながら自分で着付ける生徒</strong>
+                <p>講師が着せるのではなく、生徒自身が手を動かして学んでいることが伝わるメイン写真。</p>
+              </div>
+            </div>
+            <div class="lesson-scene__caption">
+              <span>01 / SELF DRESSING</span>
+              <strong>自分の手で、少しずつ。</strong>
+              <p>自分で着られるようになる過程が伝わるシーン。</p>
+            </div>
+          </article>
+
+          <article class="lesson-scene">
+            <div class="image-placeholder">
+              <div class="image-placeholder__inner">
+                <span class="image-placeholder__label">LESSON PHOTO 02</span>
+                <strong>講師が帯結びをアドバイス</strong>
+                <p>手元と表情が見える近めのカット。質問しやすい距離感を表現。</p>
+              </div>
+            </div>
+            <div class="lesson-scene__caption">
+              <span>02 / SUPPORT</span>
+              <strong>分からないところは、その場で。</strong>
+              <p>少人数ならではの丁寧さをイメージ。</p>
+            </div>
+          </article>
+
+          <article class="lesson-scene">
+            <div class="image-placeholder">
+              <div class="image-placeholder__inner">
+                <span class="image-placeholder__label">LESSON PHOTO 03</span>
+                <strong>着付け後に笑顔で会話する様子</strong>
+                <p>レッスン後の自然なコミュニケーションや教室の親しみやすさが伝わる写真。</p>
+              </div>
+            </div>
+            <div class="lesson-scene__caption">
+              <span>03 / COMMUNITY</span>
+              <strong>着物が好きになる時間。</strong>
+              <p>技術だけではない、教室に通う楽しさも伝えます。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESS / INFO -->
+    <section class="section section--white" id="access">
+      <div class="container info-layout">
+        <div>
+          <span class="eyebrow">Information / Access</span>
+          <h2>教室情報・アクセス</h2>
+          <p class="lead">
+            現段階ではワイヤーフレームのため、住所・営業時間・開講曜日などはダミー表記です。本番ではKIMONO京扇 水戸店の正式情報に差し替えます。
+          </p>
+
+          <dl class="store-table">
+            <div class="store-table__row">
+              <dt>教室名</dt>
+              <dd>京扇きもの教室 水戸店</dd>
+            </div>
+            <div class="store-table__row">
+              <dt>住所</dt>
+              <dd>〒000-0000 茨城県水戸市 ○○○○ 0-0-0 <span class="dummy-tag">DUMMY</span></dd>
+            </div>
+            <div class="store-table__row">
+              <dt>電話番号</dt>
+              <dd>000-000-0000 <span class="dummy-tag">DUMMY</span></dd>
+            </div>
+            <div class="store-table__row">
+              <dt>開講日時</dt>
+              <dd>○曜日〜○曜日 / 10:00〜18:00 など <span class="dummy-tag">DUMMY</span></dd>
+            </div>
+            <div class="store-table__row">
+              <dt>アクセス</dt>
+              <dd>○○駅から車で約○分／バス停○○より徒歩○分など <span class="dummy-tag">DUMMY</span></dd>
+            </div>
+            <div class="store-table__row">
+              <dt>駐車場</dt>
+              <dd>駐車場情報を記載 <span class="dummy-tag">DUMMY</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="map-placeholder" aria-label="Google Map配置予定エリア">
+          <div>
+            <div class="map-placeholder__pin"><span>水戸</span></div>
+            <strong>GOOGLE MAP EMBED AREA</strong>
+            <p>
+              本番ではGoogleマップを埋め込み。<br>
+              PCでは右側に大きく、SPでは店舗情報の下に配置します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHER -->
+    <section class="section section--soft">
+      <div class="container teacher-detail">
+        <div class="image-placeholder">
+          <div class="image-placeholder__inner">
+            <span class="image-placeholder__label">MITO TEACHER PORTRAIT</span>
+            <strong>水戸店 担当講師のポートレート</strong>
+            <p>
+              着物姿で自然に微笑む縦位置写真。スタジオ風に作り込みすぎず、実際の教室内や柔らかな和背景で撮影。<br>
+              「話しかけやすそう」という印象を優先。
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow">Instructor</span>
+          <h2>水戸店の講師</h2>
+          <div class="teacher-detail__name">
+            <strong>京扇 花子</strong>
+            <span>MITO SCHOOL INSTRUCTOR / DUMMY NAME</span>
+          </div>
+          <div class="teacher-detail__message">
+            「初めての方にも、“難しい”より“楽しい”を感じていただけるような教室を心がけています。着物で行ってみたい場所や、着てみたい着物のお話も、ぜひ聞かせてください。」
+          </div>
+          <p class="lead">
+            講師プロフィールのダミーテキストです。着付け歴、講師歴、得意な内容、教えるうえで大切にしていることなどを3〜5行で掲載します。
+          </p>
+          <div style="margin-top: 28px;">
+            <a class="btn" href="../../teacher/index.html">講師紹介を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTING -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="outing-lead">
+          <div>
+            <span class="eyebrow">Kimono Outing</span>
+            <h2>きものでお出かけ</h2>
+          </div>
+          <div class="outing-lead__copy">
+            <p>
+              着付けを覚えることがゴールではなく、「自分で着て、出かけて、楽しむ」ことまでを教室の魅力として伝えるセクションです。水戸店で実際に行ったイベントやお出かけの写真・記事を掲載する想定です。
+            </p>
+          </div>
+        </div>
+
+        <article class="outing-feature">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">OUTING MAIN PHOTO</span>
+              <strong>水戸の街や季節の名所へ、着物姿で出かける生徒たち</strong>
+              <p>
+                3〜5名程度が着物で自然に歩く・会話する横位置写真。観光パンフレット風ではなく、教室仲間との楽しい時間が伝わるスナップ。<br>
+                実績があれば、水戸店で実際に訪れた場所・イベントの写真を優先。
+              </p>
+            </div>
+          </div>
+          <div class="outing-feature__body">
+            <span>ENJOY AFTER LEARNING</span>
+            <h3>着られるようになったら、<br>着物で出かけよう。</h3>
+            <p>
+              お出かけ企画の紹介ダミーテキストです。季節のイベント、食事会、街歩きなど、水戸店で実際に実施している内容があれば、開催時期や雰囲気を紹介します。
+            </p>
+            <p>
+              「教室で学んだ先に、こんな楽しみ方がある」と感じてもらうことで、入会前の方にも着物のある生活をイメージしてもらいます。
+            </p>
+          </div>
+        </article>
+
+        <div class="outing-gallery">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">OUTING PHOTO 02</span>
+              <strong>季節の花と着物</strong>
+              <p>梅・桜・紅葉など、季節感が分かるお出かけ写真。</p>
+            </div>
+          </div>
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">OUTING PHOTO 03</span>
+              <strong>食事会・カフェでの一枚</strong>
+              <p>着物を特別な行事だけでなく普段のお出かけに楽しむイメージ。</p>
+            </div>
+          </div>
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">OUTING PHOTO 04</span>
+              <strong>後ろ姿・帯のコーディネート</strong>
+              <p>生徒ごとの装いの違いが楽しめる、雑誌のようなスナップ。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSE LINK -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="course-banner">
+          <div>
+            <span class="eyebrow">Course / Price</span>
+            <h3>コース・受講料について</h3>
+            <p>
+              水戸店で受講できるコース、レッスン内容、受講料については「コース・受講料」ページで共通情報としてご案内する想定です。店舗ごとに異なる場合は、水戸店独自の注意事項をここに追記します。
+            </p>
+          </div>
+          <a class="btn btn--accent" href="../../lesson/index.html">コース・受講料を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCAL FAQ -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">Mito School FAQ</span>
+            <h2>水戸店について<br>よくあるご質問</h2>
+            <p class="lead">店舗固有の質問がある場合のみ掲載し、一般的な質問は「よくある質問」ページへ集約します。</p>
+          </div>
+          <a class="btn" href="../../faq/index.html">よくある質問をすべて見る</a>
+        </div>
+
+        <div class="local-faq">
+          <article class="local-faq__item is-open">
+            <button class="local-faq__question" type="button" aria-expanded="true">
+              <span class="local-faq__q">Q</span>
+              <strong>水戸店には駐車場がありますか？</strong>
+              <span class="local-faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="local-faq__answer">
+              <span class="local-faq__a">A</span>
+              <p>駐車場に関する正式情報を掲載します。現在はワイヤーフレームのためダミー回答です。</p>
+            </div>
+          </article>
+
+          <article class="local-faq__item">
+            <button class="local-faq__question" type="button" aria-expanded="false">
+              <span class="local-faq__q">Q</span>
+              <strong>着物や道具を持っていなくても相談できますか？</strong>
+              <span class="local-faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="local-faq__answer">
+              <span class="local-faq__a">A</span>
+              <p>レンタル・持ち物・初回体験時に必要なものなど、実際の運用に合わせた回答へ差し替えます。</p>
+            </div>
+          </article>
+
+          <article class="local-faq__item">
+            <button class="local-faq__question" type="button" aria-expanded="false">
+              <span class="local-faq__q">Q</span>
+              <strong>教室の見学や体験はできますか？</strong>
+              <span class="local-faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="local-faq__answer">
+              <span class="local-faq__a">A</span>
+              <p>水戸店専用の来店予約フォームからお申し込みいただく想定です。受付方法・体験内容は正式情報確定後に記載します。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER SCHOOLS -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">Other Schools</span>
+            <h2>その他の教室</h2>
+            <p class="lead">生活圏や通いやすさに合わせて、ほかの教室もご覧いただけます。</p>
+          </div>
+          <a class="btn" href="../index.html">教室一覧へ戻る</a>
+        </div>
+
+        <div class="other-schools">
+          <a class="other-school" href="../ishioka/index.html">
+            <span>IBARAKI / ISHIOKA</span>
+            <strong>石岡店</strong>
+            <small>石岡エリアの教室を見る</small>
+          </a>
+          <a class="other-school" href="../moka/index.html">
+            <span>TOCHIGI / MOKA</span>
+            <strong>真岡店</strong>
+            <small>真岡エリアの教室を見る</small>
+          </a>
+          <a class="other-school" href="index.html">
+            <span>IBARAKI / CHIKUSEI</span>
+            <strong>筑西店</strong>
+            <small>筑西エリアの教室を見る</small>
+          </a>
+          <a class="other-school" href="../tsuruse/index.html">
+            <span>SAITAMA / TSURUSE</span>
+            <strong>鶴瀬店</strong>
+            <small>鶴瀬エリアの教室を見る</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MITO CLOSING CTA -->
+    <section class="section closing-cta mito-cta">
+      <div class="container closing-cta__inner">
+        <div>
+          <span class="eyebrow">Mito School Reservation</span>
+          <h2>水戸店で、<br>着物を楽しむ一歩を。</h2>
+          <p>
+            教室の雰囲気を見てみたい、まずは相談してみたいという方も歓迎です。水戸店をご希望の方は、店舗専用の来店予約フォームからお申し込みください。
+          </p>
+        </div>
+        <div class="closing-cta__buttons">
+          <a class="btn btn--accent" href="../../apply/mito/index.html">水戸店を予約する</a>
+          <a class="btn btn--ghost-white" href="../../contact/index.html">問い合わせフォーム</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       COMMON FOOTER / 下層ページでも共通使用想定
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html" aria-label="京扇きもの教室 TOP">
+          <span class="brand__mark">京扇<br>教室</span>
+          <span class="brand__text">
+            <strong>京扇きもの教室</strong>
+            <small>KIMONO KYOSEN WASOU SCHOOL</small>
+          </span>
+        </a>
+        <p>
+          着物をもっと身近に、もっと楽しく。<br>
+          初心者の方から学び直したい方まで、一人ひとりのペースに寄り添う着付け教室です。<br>
+          ※フッター説明文はダミーです。
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <a href="../../about/index.html">京扇きもの教室とは</a>
+        <a href="../../lesson/index.html">コース・受講料</a>
+        <a href="../index.html">教室紹介</a>
+        <a href="../../teacher/index.html">講師紹介</a>
+        <a href="../../faq/index.html">よくある質問</a>
+        <a href="../../company/index.html">会社概要</a>
+        <a href="../../privacy/index.html">プライバシーポリシー</a>
+        <a href="../../apply/index.html">来店予約フォーム</a>
+        <a href="../../contact/index.html">問い合わせフォーム</a>
+      </nav>
+    </div>
+
+    <div class="container site-footer__bottom">
+      <span>© KIMONO KYOSEN. ALL RIGHTS RESERVED.</span>
+      <a class="back-to-top" href="#top">PAGE TOP ↑</a>
+    </div>
+  </footer>
+
+  <div class="sp-fixed-cta" aria-label="固定CTA">
+    <a href="../../contact/index.html">お問い合わせ</a>
+    <a href="../../apply/mito/index.html">水戸店を予約</a>
+  </div>
+
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      const closeMenu = () => {
+        menuButton.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuButton.setAttribute('aria-label', 'メニューを開く');
+      };
+
+      const openMenu = () => {
+        menuButton.classList.add('is-open');
+        mobileMenu.classList.add('is-open');
+        document.body.classList.add('menu-open');
+        menuButton.setAttribute('aria-expanded', 'true');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuButton.setAttribute('aria-label', 'メニューを閉じる');
+      };
+
+      menuButton.addEventListener('click', () => {
+        if (menuButton.classList.contains('is-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+
+
+
+      document.querySelectorAll('.local-faq__question').forEach((button) => {
+        button.addEventListener('click', () => {
+          const item = button.closest('.local-faq__item');
+          const willOpen = !item.classList.contains('is-open');
+          item.classList.toggle('is-open', willOpen);
+          button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

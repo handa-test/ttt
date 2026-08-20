@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="京扇きもの教室（仮）のワイヤーフレーム。着付けを気軽に、楽しく学べる教室をご案内します。">
+  <title>京扇きもの教室 | 着物をもっと身近に、もっと楽しく</title>
+  <style>
+    :root {
+      --bg: #fbf9f4;
+      --paper: #ffffff;
+      --ink: #27231f;
+      --muted: #746e67;
+      --line: #ded8cf;
+      --soft: #f2eee7;
+      --accent: #8f2634;
+      --accent-dark: #6f1925;
+      --accent-soft: #f4e7e9;
+      --gold: #a88d61;
+      --green: #435648;
+      --shadow: 0 18px 50px rgba(45, 36, 29, 0.08);
+      --radius: 18px;
+      --container: 1180px;
+      --header-height: 82px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 112px 0;
+    }
+
+    .section--white {
+      background: var(--paper);
+    }
+
+    .section--soft {
+      background: var(--soft);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 54px;
+    }
+
+    .section-head__main {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 32px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.45;
+      letter-spacing: 0.08em;
+    }
+
+    .lead {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0 28px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .btn::after {
+      content: "→";
+      transition: transform 0.25s ease;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn:hover::after {
+      transform: translateX(4px);
+    }
+
+    .btn--accent {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn--accent:hover {
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+    }
+
+    .btn--ghost-white {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: #fff;
+    }
+
+    .btn--ghost-white:hover {
+      border-color: #fff;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .image-placeholder {
+      display: flex;
+      min-height: 280px;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid #d2cbc2;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0)),
+        repeating-linear-gradient(45deg, #ece7df, #ece7df 14px, #f5f2ec 14px, #f5f2ec 28px);
+      color: #6f6860;
+      text-align: center;
+    }
+
+    .image-placeholder__inner {
+      max-width: 440px;
+    }
+
+    .image-placeholder__label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border: 1px solid #bdb5aa;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .image-placeholder strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #4c4741;
+      font-size: 15px;
+    }
+
+    .image-placeholder p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* =====================================================
+       Shared header: 下層ページでも共通利用を想定
+    ====================================================== */
+    .site-header {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(39, 35, 31, 0.08);
+      background: rgba(251, 249, 244, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .site-header__inner {
+      display: flex;
+      width: min(calc(100% - 40px), 1380px);
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand__mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: "Yu Mincho", serif;
+      font-size: 11px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .brand__text strong,
+    .brand__text small {
+      display: block;
+    }
+
+    .brand__text strong {
+      font-family: "Yu Mincho", serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .brand__text small {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+    }
+
+    .global-nav {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .global-nav__links {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 1.4vw, 26px);
+      white-space: nowrap;
+    }
+
+    .global-nav__links a {
+      position: relative;
+      padding: 8px 0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .global-nav__links a::after {
+      position: absolute;
+      right: 0;
+      bottom: 2px;
+      left: 0;
+      height: 1px;
+      content: "";
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+
+    .global-nav__links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .global-nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .header-cta--accent {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--ink);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      position: absolute;
+      width: 19px;
+      height: 1px;
+      content: "";
+      background: #fff;
+      transition: 0.25s ease;
+    }
+
+    .menu-toggle::before {
+      transform: translateY(-6px);
+    }
+
+    .menu-toggle::after {
+      transform: translateY(6px);
+    }
+
+    .menu-toggle.is-open span {
+      opacity: 0;
+    }
+
+    .menu-toggle.is-open::before {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.is-open::after {
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 990;
+      top: var(--header-height);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      overflow-y: auto;
+      padding: 36px 24px 48px;
+      background: var(--bg);
+    }
+
+    .mobile-menu.is-open {
+      display: block;
+    }
+
+    .mobile-menu__nav {
+      display: grid;
+      gap: 0;
+      margin-bottom: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mobile-menu__nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 4px;
+      border-bottom: 1px solid var(--line);
+      font-family: "Yu Mincho", serif;
+      font-size: 17px;
+    }
+
+    .mobile-menu__nav a::after {
+      content: "→";
+      color: var(--accent);
+      font-family: sans-serif;
+    }
+
+    .mobile-menu__cta {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-menu__cta .btn {
+      width: 100%;
+    }
+
+    /* =====================================================
+       Hero
+    ====================================================== */
+    .hero {
+      position: relative;
+      min-height: calc(100svh - var(--header-height));
+      overflow: hidden;
+      background: #efe8df;
+    }
+
+    .hero__grid {
+      display: grid;
+      min-height: calc(100svh - var(--header-height));
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      padding: 80px max(44px, calc((100vw - var(--container)) / 2));
+      padding-right: 48px;
+      background:
+        radial-gradient(circle at 0 0, rgba(143, 38, 52, 0.08), transparent 38%),
+        var(--bg);
+    }
+
+    .hero__content-inner {
+      max-width: 580px;
+    }
+
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .hero__tag::before {
+      width: 26px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    .hero h1 {
+      margin-bottom: 28px;
+      font-size: clamp(40px, 5.2vw, 72px);
+      line-height: 1.45;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero__lead {
+      max-width: 500px;
+      margin-bottom: 34px;
+      color: #5f5952;
+      font-size: 15px;
+      line-height: 2.1;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero__visual {
+      position: relative;
+      min-height: 620px;
+    }
+
+    .hero__visual .image-placeholder {
+      position: absolute;
+      inset: 0;
+      min-height: 100%;
+      border: 0;
+      background:
+        linear-gradient(135deg, rgba(92, 72, 54, 0.12), rgba(255,255,255,0.08)),
+        repeating-linear-gradient(45deg, #dcd2c5, #dcd2c5 16px, #e9e1d7 16px, #e9e1d7 32px);
+    }
+
+    .hero__visual .image-placeholder__inner {
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(7px);
+    }
+
+    .hero__note {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      max-width: 260px;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(39,35,31,0.86);
+      color: #fff;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .hero__note strong {
+      color: #e0c79e;
+      white-space: nowrap;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      z-index: 3;
+      bottom: 22px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #777067;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      writing-mode: vertical-rl;
+    }
+
+    /* intro */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 84px;
+    }
+
+    .intro-copy h2 {
+      font-size: clamp(32px, 4.2vw, 52px);
+    }
+
+    .intro-copy p {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2.25;
+    }
+
+    .intro-visual {
+      display: grid;
+      grid-template-columns: 1fr 0.62fr;
+      align-items: end;
+      gap: 18px;
+    }
+
+    .intro-visual .image-placeholder:first-child {
+      min-height: 520px;
+    }
+
+    .intro-visual .image-placeholder:last-child {
+      min-height: 320px;
+      transform: translateY(42px);
+    }
+
+    /* features */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      position: relative;
+      padding: 38px 30px 34px;
+      border-top: 1px solid var(--ink);
+      background: rgba(255,255,255,0.6);
+    }
+
+    .feature-card__no {
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      letter-spacing: 0.08em;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 18px;
+      font-size: 22px;
+      line-height: 1.6;
+    }
+
+    .feature-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* lesson */
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .lesson-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .lesson-card .image-placeholder {
+      min-height: 290px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lesson-card__body {
+      padding: 30px 32px 34px;
+    }
+
+    .lesson-card__tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .lesson-card h3 {
+      margin-bottom: 12px;
+      font-size: 25px;
+    }
+
+    .lesson-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lesson-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lesson-card__meta li {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fcfbf9;
+      color: #5e5851;
+      font-size: 11px;
+    }
+
+    .section-foot {
+      display: flex;
+      justify-content: center;
+      margin-top: 44px;
+    }
+
+    /* steps */
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .step-item {
+      min-height: 260px;
+      padding: 32px 26px;
+      background: var(--paper);
+    }
+
+    .step-item__num {
+      display: block;
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-style: italic;
+    }
+
+    .step-item h3 {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .step-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* school */
+    .school-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: stretch;
+      gap: 40px;
+    }
+
+    .school-layout > .image-placeholder {
+      min-height: 560px;
+    }
+
+    .school-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .school-item {
+      display: grid;
+      grid-template-columns: 78px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: 0.2s ease;
+    }
+
+    .school-item:hover {
+      border-color: #bbb1a3;
+      transform: translateX(3px);
+    }
+
+    .school-item__pref {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .school-item__name {
+      font-family: "Yu Mincho", serif;
+      font-size: 20px;
+    }
+
+    .school-item__arrow {
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    /* teacher */
+    .teacher-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .teacher-layout .image-placeholder {
+      min-height: 580px;
+      border-radius: 180px 180px 0 0;
+    }
+
+    .teacher-copy blockquote {
+      margin: 28px 0;
+      padding: 0 0 0 26px;
+      border-left: 1px solid var(--accent);
+      color: #4d4740;
+      font-family: "Yu Mincho", serif;
+      font-size: 20px;
+      line-height: 2;
+    }
+
+    /* voice */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .voice-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .voice-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .voice-card__avatar {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--soft);
+      color: #8e867d;
+      font-size: 9px;
+    }
+
+    .voice-card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .voice-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    /* faq */
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-button {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 42px 1fr 30px;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 4px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-q {
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .faq-button strong {
+      font-family: "Yu Mincho", serif;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .faq-icon {
+      position: relative;
+      width: 22px;
+      height: 22px;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 13px;
+      height: 1px;
+      content: "";
+      background: var(--ink);
+      transform: translate(-50%, -50%);
+    }
+
+    .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: 0.2s ease;
+    }
+
+    .faq-item.is-open .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+
+    .faq-answer {
+      display: none;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 0 4px 28px;
+    }
+
+    .faq-item.is-open .faq-answer {
+      display: grid;
+    }
+
+    .faq-a {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* CTA */
+    .closing-cta {
+      position: relative;
+      overflow: hidden;
+      background: var(--green);
+      color: #fff;
+    }
+
+    .closing-cta::before {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .closing-cta__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .closing-cta .eyebrow {
+      color: #e1c9a2;
+    }
+
+    .closing-cta h2 {
+      margin-bottom: 18px;
+      font-size: clamp(30px, 4vw, 46px);
+    }
+
+    .closing-cta p {
+      max-width: 700px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+    }
+
+    .closing-cta__buttons {
+      display: grid;
+      min-width: 260px;
+      gap: 10px;
+    }
+
+    .closing-cta__buttons .btn {
+      width: 100%;
+    }
+
+    /* =====================================================
+       Shared footer: 下層ページでも共通利用を想定
+    ====================================================== */
+    .site-footer {
+      background: #201e1b;
+      color: #fff;
+    }
+
+    .site-footer__main {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 70px;
+      padding: 70px 0 56px;
+    }
+
+    .footer-brand .brand {
+      color: #fff;
+    }
+
+    .footer-brand .brand__mark {
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .footer-brand .brand__text small {
+      color: rgba(255,255,255,0.54);
+    }
+
+    .footer-brand p {
+      max-width: 360px;
+      margin: 28px 0 0;
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 44px;
+    }
+
+    .footer-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.86);
+      font-size: 12px;
+    }
+
+    .footer-nav a::after {
+      content: "↗";
+      color: rgba(255,255,255,0.35);
+      font-size: 10px;
+    }
+
+    .site-footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.42);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* fixed mobile CTA */
+    .sp-fixed-cta {
+      position: fixed;
+      z-index: 900;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      display: none;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(39,35,31,0.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 12px 40px rgba(39,35,31,0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .sp-fixed-cta a {
+      display: flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ink);
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .sp-fixed-cta a:last-child {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 1180px) {
+      .global-nav__links {
+        gap: 12px;
+      }
+
+      .global-nav__links a {
+        font-size: 10px;
+      }
+
+      .header-cta {
+        padding: 0 12px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --header-height: 72px;
+      }
+
+      .global-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        position: relative;
+        display: inline-flex;
+      }
+
+      .hero__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__content {
+        min-height: 560px;
+        padding: 76px max(28px, calc((100vw - 760px) / 2));
+      }
+
+      .hero__visual {
+        min-height: 560px;
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .intro-grid,
+      .teacher-layout,
+      .school-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .intro-visual {
+        max-width: 760px;
+      }
+
+      .feature-grid,
+      .voice-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .step-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .school-layout > .image-placeholder {
+        min-height: 420px;
+      }
+
+      .teacher-layout .image-placeholder {
+        max-width: 680px;
+        min-height: 520px;
+      }
+
+      .closing-cta__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .closing-cta__buttons {
+        display: flex;
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+
+      .closing-cta__buttons .btn {
+        width: auto;
+      }
+
+      .site-footer__main {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 34px;
+      }
+
+      .section-head .btn {
+        margin-top: 24px;
+      }
+
+      .site-header__inner {
+        width: calc(100% - 28px);
+      }
+
+      .brand__mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand__text strong {
+        font-size: 15px;
+      }
+
+      .brand__text small {
+        font-size: 8px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero__grid {
+        min-height: auto;
+      }
+
+      .hero__content {
+        min-height: 520px;
+        padding: 62px 24px 66px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 12vw, 54px);
+      }
+
+      .hero__lead {
+        font-size: 13px;
+      }
+
+      .hero__actions .btn {
+        width: 100%;
+      }
+
+      .hero__visual {
+        min-height: 460px;
+      }
+
+      .hero__note {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        max-width: none;
+      }
+
+      .intro-grid {
+        gap: 36px;
+      }
+
+      .intro-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-visual .image-placeholder:first-child,
+      .intro-visual .image-placeholder:last-child {
+        min-height: 360px;
+        transform: none;
+      }
+
+      .intro-visual .image-placeholder:last-child {
+        display: none;
+      }
+
+      .feature-grid,
+      .lesson-grid,
+      .voice-grid,
+      .step-list {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 30px 4px;
+      }
+
+      .feature-card__no {
+        margin-bottom: 22px;
+      }
+
+      .lesson-card__body {
+        padding: 24px 22px 28px;
+      }
+
+      .step-item {
+        min-height: auto;
+      }
+
+      .school-layout > .image-placeholder {
+        min-height: 340px;
+      }
+
+      .school-item {
+        grid-template-columns: 58px 1fr auto;
+        gap: 10px;
+        padding: 18px 14px;
+      }
+
+      .school-item__name {
+        font-size: 17px;
+      }
+
+      .teacher-layout .image-placeholder {
+        min-height: 430px;
+        border-radius: 120px 120px 0 0;
+      }
+
+      .teacher-copy blockquote {
+        font-size: 17px;
+      }
+
+      .faq-button {
+        grid-template-columns: 32px 1fr 24px;
+      }
+
+      .faq-button strong {
+        font-size: 15px;
+      }
+
+      .faq-answer {
+        grid-template-columns: 32px 1fr;
+      }
+
+      .closing-cta__buttons {
+        display: grid;
+      }
+
+      .closing-cta__buttons .btn {
+        width: 100%;
+      }
+
+      .site-footer__main {
+        padding-top: 58px;
+      }
+
+      .footer-nav {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .site-footer__bottom {
+        display: block;
+        padding-bottom: 92px;
+      }
+
+      .back-to-top {
+        margin-top: 14px;
+      }
+
+      .sp-fixed-cta {
+        display: grid;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- =====================================================
+       COMMON HEADER / 下層ページでも共通使用想定
+  ====================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html" aria-label="京扇きもの教室 TOP">
+        <span class="brand__mark">京扇<br>教室</span>
+        <span class="brand__text">
+          <strong>京扇きもの教室</strong>
+          <small>KIMONO KYOSEN WASOU SCHOOL</small>
+        </span>
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <div class="global-nav__links">
+          <a href="about/index.html">京扇きもの教室とは</a>
+          <a href="lesson/index.html">コース・受講料</a>
+          <a href="school/index.html">教室紹介</a>
+          <a href="teacher/index.html">講師紹介</a>
+          <a href="faq/index.html">よくある質問</a>
+        </div>
+        <div class="global-nav__cta">
+          <a class="header-cta" href="contact/index.html">お問い合わせ</a>
+          <a class="header-cta header-cta--accent" href="apply/index.html">来店予約</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="スマートフォン用ナビゲーション">
+      <a href="about/index.html">京扇きもの教室とは</a>
+      <a href="lesson/index.html">コース・受講料</a>
+      <a href="school/index.html">教室紹介</a>
+      <a href="teacher/index.html">講師紹介</a>
+      <a href="faq/index.html">よくある質問</a>
+    </nav>
+    <div class="mobile-menu__cta">
+      <a class="btn btn--accent" href="apply/index.html">来店予約フォーム</a>
+      <a class="btn" href="contact/index.html">問い合わせフォーム</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <div class="hero__content-inner">
+            <span class="hero__tag">着物のある暮らしを、もっと気軽に。</span>
+            <h1>着られる喜びを、<br><span>私の日常</span>へ。</h1>
+            <p class="hero__lead">
+              「着物は好き。でも、自分で着るのは難しそう。」<br>
+              京扇きもの教室は、そんな方が気軽に一歩を踏み出せる着付け教室です。<br>
+              初めての方も、もう一度学びたい方も、自分のペースで楽しく学べます。
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--accent" href="apply/index.html">まずは体験・来店予約</a>
+              <a class="btn" href="lesson/index.html">コース・受講料を見る</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">HERO IMAGE</span>
+              <strong>メインビジュアル：自然体で着物を楽しむ女性</strong>
+              <p>
+                30〜50代程度の女性が、自分で着付けた着物姿で穏やかに微笑む写真。<br>
+                スタジオ撮影よりも、和室・庭・街歩きなど「日常に着物がある」空気感。<br>
+                高級すぎず、初心者にも親しみやすい明るいトーン。
+              </p>
+            </div>
+          </div>
+          <div class="hero__note">
+            <strong>IMAGE TONE</strong>
+            <span>生成AI・撮影ともに、自然光／生成り／木目／くすみ赤を基調に統一</span>
+          </div>
+        </div>
+      </div>
+      <span class="scroll-cue">SCROLL</span>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--white">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <span class="eyebrow">About us</span>
+          <h2>「着物を着たい」を、<br>難しく考えない教室です。</h2>
+          <p>
+            着付けに興味はあるけれど、「道具が多そう」「覚えるのが大変そう」と感じていませんか。<br>
+            京扇きもの教室では、初めての方にも分かりやすいレッスンを大切にしています。
+          </p>
+          <p>
+            目指すのは、特別な日のためだけではなく、ランチや観劇、季節のお出かけなど、日常の中で気軽に着物を楽しめるようになること。少人数の落ち着いた環境で、ひとつずつ身につけていきます。
+          </p>
+          <a class="btn" href="about/index.html">京扇きもの教室について</a>
+        </div>
+
+        <div class="intro-visual">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">IMAGE 01</span>
+              <strong>講師と生徒が着付けを練習している様子</strong>
+              <p>鏡の前で講師が帯まわりを優しく確認しているシーン。教室の距離感・安心感が伝わる写真。</p>
+            </div>
+          </div>
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">IMAGE 02</span>
+              <strong>手元の寄りカット</strong>
+              <p>帯締め、帯揚げ、着物の柄など。サイト全体のアクセントになる情緒的な写真。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">Why Kyosen</span>
+            <h2>京扇きもの教室が<br>大切にしていること</h2>
+            <p class="lead">「続けられる」「楽しめる」「ちゃんと身につく」。着物をもっと身近に感じていただくための教室づくりを行います。</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-card__no">01</div>
+            <h3>初心者でも安心の<br>わかりやすいレッスン</h3>
+            <p>道具の名前や着物のたたみ方など、基本から丁寧に。分からないまま先に進まず、一人ひとりのペースに合わせます。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__no">02</div>
+            <h3>少人数で質問しやすい<br>落ち着いた教室</h3>
+            <p>講師との距離が近く、「ここだけもう一度」が言いやすい環境を想定。楽しく会話をしながら着付けを学べます。</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__no">03</div>
+            <h3>着られるだけでなく<br>着物を楽しむ機会も</h3>
+            <p>着物でのお出かけや季節イベントなど、習ったことを実際に楽しむ機会も企画予定。仲間づくりにもつながります。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">Lesson</span>
+            <h2>目的に合わせて選べる<br>レッスンコース</h2>
+            <p class="lead">以下はワイヤー用のダミーです。実際のコース数・料金体系が決まり次第、カード数や情報量を調整できます。</p>
+          </div>
+          <a class="btn" href="lesson/index.html">コース・受講料一覧</a>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson-card">
+            <div class="image-placeholder">
+              <div class="image-placeholder__inner">
+                <span class="image-placeholder__label">COURSE IMAGE</span>
+                <strong>初心者向け・着付けの基本レッスン</strong>
+                <p>鏡の前で着物を着る女性。手元や帯の動作が見える、清潔感のある教室写真。</p>
+              </div>
+            </div>
+            <div class="lesson-card__body">
+              <span class="lesson-card__tag">はじめての方へ</span>
+              <h3>基本の着付けコース</h3>
+              <p>着物の扱い方から、長襦袢・着物・帯までを順番に。まずは一人で着られることを目指します。</p>
+              <ul class="lesson-card__meta">
+                <li>全8回（仮）</li>
+                <li>1回90分（仮）</li>
+                <li>初心者歓迎</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="lesson-card">
+            <div class="image-placeholder">
+              <div class="image-placeholder__inner">
+                <span class="image-placeholder__label">COURSE IMAGE</span>
+                <strong>ステップアップ・帯結びレッスン</strong>
+                <p>帯結びのアレンジやコーディネートを楽しむ写真。少し華やかな着物・帯の組み合わせ。</p>
+              </div>
+            </div>
+            <div class="lesson-card__body">
+              <span class="lesson-card__tag">もっと楽しみたい方へ</span>
+              <h3>ステップアップコース</h3>
+              <p>基本の着付けを身につけた方へ。帯結びや着姿をより美しく見せるコツなどを学びます。</p>
+              <ul class="lesson-card__meta">
+                <li>全6回（仮）</li>
+                <li>1回90分（仮）</li>
+                <li>経験者向け</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">First Step</span>
+            <h2>はじめての方も、<br>気軽にご相談ください。</h2>
+            <p class="lead">予約からレッスン開始までのイメージ。お問い合わせ前の心理的なハードルを下げるため、TOPにも流れを簡潔に掲載します。</p>
+          </div>
+        </div>
+
+        <div class="step-list">
+          <article class="step-item">
+            <span class="step-item__num">01</span>
+            <h3>来店・体験予約</h3>
+            <p>専用フォームからご希望の教室・日時などを送信してください。</p>
+          </article>
+          <article class="step-item">
+            <span class="step-item__num">02</span>
+            <h3>教室でご相談</h3>
+            <p>経験や目的、ご希望の通い方を伺い、教室やレッスン内容をご案内します。</p>
+          </article>
+          <article class="step-item">
+            <span class="step-item__num">03</span>
+            <h3>コースを決定</h3>
+            <p>無理なく続けられるコース・スケジュールを一緒に確認します。</p>
+          </article>
+          <article class="step-item">
+            <span class="step-item__num">04</span>
+            <h3>レッスン開始</h3>
+            <p>道具の扱い方などの基本から、実際に手を動かしながら学びます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHOOLS -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">School</span>
+            <h2>お近くの教室で、<br>着物を楽しむ時間を。</h2>
+            <p class="lead">店舗・教室ページは共通テンプレート化を想定し、WordPressで各教室情報を管理しやすい構成にします。</p>
+          </div>
+          <a class="btn" href="school/index.html">教室一覧を見る</a>
+        </div>
+
+        <div class="school-layout">
+          <div class="image-placeholder">
+            <div class="image-placeholder__inner">
+              <span class="image-placeholder__label">SCHOOL IMAGE</span>
+              <strong>明るく清潔感のある教室・店舗内観</strong>
+              <p>
+                畳・木・白壁など和の要素がありつつ、古典的すぎない空間。<br>
+                生徒が緊張しない、入りやすさ・清潔感を重視した写真。
+              </p>
+            </div>
+          </div>
+
+          <div class="school-list">
+            <a class="school-item" href="school/mito/index.html">
+              <span class="school-item__pref">茨城県</span>
+              <span class="school-item__name">水戸教室</span>
+              <span class="school-item__arrow">→</span>
+            </a>
+            <a class="school-item" href="school/chikusei/index.html">
+              <span class="school-item__pref">茨城県</span>
+              <span class="school-item__name">筑西教室</span>
+              <span class="school-item__arrow">→</span>
+            </a>
+            <a class="school-item" href="school/ishioka/index.html">
+              <span class="school-item__pref">茨城県</span>
+              <span class="school-item__name">石岡教室</span>
+              <span class="school-item__arrow">→</span>
+            </a>
+            <a class="school-item" href="school/moka/index.html">
+              <span class="school-item__pref">栃木県</span>
+              <span class="school-item__name">真岡教室</span>
+              <span class="school-item__arrow">→</span>
+            </a>
+            <a class="school-item" href="school/tsuruse/index.html">
+              <span class="school-item__pref">埼玉県</span>
+              <span class="school-item__name">鶴瀬教室</span>
+              <span class="school-item__arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHER -->
+    <section class="section section--soft">
+      <div class="container teacher-layout">
+        <div class="image-placeholder">
+          <div class="image-placeholder__inner">
+            <span class="image-placeholder__label">TEACHER IMAGE</span>
+            <strong>講師のポートレート／レッスン風景</strong>
+            <p>
+              着物姿の講師が自然に微笑む写真。堅い「先生」感よりも、話しかけやすさ・品の良さを重視。<br>
+              個別講師紹介では顔写真＋経歴＋メッセージを掲載。
+            </p>
+          </div>
+        </div>
+
+        <div class="teacher-copy">
+          <span class="eyebrow">Teacher</span>
+          <h2>「できた」の瞬間を、<br>一緒に喜べる講師がいます。</h2>
+          <blockquote>
+            上手に着ることだけではなく、<br>
+            「着物って楽しい」と感じてもらえることを大切にしています。
+          </blockquote>
+          <p class="lead">
+            ダミーテキストです。経験豊富な講師が、初心者の方にも分かりやすく丁寧にお伝えします。着物に関するちょっとした疑問や、コーディネートの相談も気軽にできるような関係づくりを目指します。
+          </p>
+          <div style="margin-top: 30px;">
+            <a class="btn" href="teacher/index.html">講師紹介を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOICE -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">Voice</span>
+            <h2>こんな方が通っています</h2>
+            <p class="lead">正式な受講者インタビューや口コミが用意できる場合に差し替える想定。現段階では「対象ユーザー像」を伝えるワイヤー要素です。</p>
+          </div>
+        </div>
+
+        <div class="voice-grid">
+          <article class="voice-card">
+            <div class="voice-card__meta">
+              <span class="voice-card__avatar">PHOTO</span>
+              <span>40代 / 初心者</span>
+            </div>
+            <h3>娘の成人式をきっかけに、<br>自分も着物を楽しみたくて。</h3>
+            <p>ダミーテキストです。初めは難しそうだと思っていましたが、少人数なので質問しやすく、毎回少しずつできることが増えています。</p>
+          </article>
+          <article class="voice-card">
+            <div class="voice-card__meta">
+              <span class="voice-card__avatar">PHOTO</span>
+              <span>50代 / 学び直し</span>
+            </div>
+            <h3>昔習った着付けを、<br>もう一度きちんと身につけたい。</h3>
+            <p>ダミーテキストです。自分の着物を活かしたくて始めました。季節ごとのコーディネートも教えてもらえるので楽しみが広がりました。</p>
+          </article>
+          <article class="voice-card">
+            <div class="voice-card__meta">
+              <span class="voice-card__avatar">PHOTO</span>
+              <span>30代 / 趣味</span>
+            </div>
+            <h3>観劇や旅行に、<br>自分で着物を着て行きたい。</h3>
+            <p>ダミーテキストです。目標があるので続けやすく、着物を通じて新しい趣味や人とのつながりができました。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow">FAQ</span>
+            <h2>よくあるご質問</h2>
+            <p class="lead">TOPでは代表的な質問のみ表示し、詳細ページに誘導します。アコーディオンのUI確認用に開閉できます。</p>
+          </div>
+          <a class="btn" href="faq/index.html">よくある質問一覧</a>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button class="faq-button" type="button" aria-expanded="true">
+              <span class="faq-q">Q</span>
+              <strong>着付けがまったく初めてでも大丈夫ですか？</strong>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <span class="faq-a">A</span>
+              <p>はい。初心者の方を想定したレッスンをご用意しています。着物や道具の扱い方から順番にご説明しますので、安心してご参加ください。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-q">Q</span>
+              <strong>着物を持っていなくても受講できますか？</strong>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <span class="faq-a">A</span>
+              <p>ダミー回答です。レンタル対応の有無や必要な持ち物など、実際の運用ルールに合わせて本番時に記載します。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-q">Q</span>
+              <strong>レッスンの曜日や時間は選べますか？</strong>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <span class="faq-a">A</span>
+              <p>ダミー回答です。教室ごとの開催日や予約方法が確定した段階で、誤解のない表現に調整します。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false">
+              <span class="faq-q">Q</span>
+              <strong>まずは教室の雰囲気だけ見てみたいのですが可能ですか？</strong>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <span class="faq-a">A</span>
+              <p>ダミー回答です。見学・体験レッスン等の実施内容に合わせて、来店予約への導線を設計します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="section closing-cta">
+      <div class="container closing-cta__inner">
+        <div>
+          <span class="eyebrow">Reservation / Contact</span>
+          <h2>着物を楽しむ、新しい一歩を。</h2>
+          <p>
+            まずは教室の雰囲気やレッスン内容を知るところからでも大丈夫です。ご希望の教室を選んでご予約いただくか、気になることがあればお問い合わせください。
+          </p>
+        </div>
+        <div class="closing-cta__buttons">
+          <a class="btn btn--accent" href="apply/index.html">来店予約フォーム</a>
+          <a class="btn btn--ghost-white" href="contact/index.html">問い合わせフォーム</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       COMMON FOOTER / 下層ページでも共通使用想定
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="京扇きもの教室 TOP">
+          <span class="brand__mark">京扇<br>教室</span>
+          <span class="brand__text">
+            <strong>京扇きもの教室</strong>
+            <small>KIMONO KYOSEN WASOU SCHOOL</small>
+          </span>
+        </a>
+        <p>
+          着物をもっと身近に、もっと楽しく。<br>
+          初心者の方から学び直したい方まで、一人ひとりのペースに寄り添う着付け教室です。<br>
+          ※フッター説明文はダミーです。
+        </p>
+      </div>
+
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <a href="about/index.html">京扇きもの教室とは</a>
+        <a href="lesson/index.html">コース・受講料</a>
+        <a href="school/index.html">教室紹介</a>
+        <a href="teacher/index.html">講師紹介</a>
+        <a href="faq/index.html">よくある質問</a>
+        <a href="company/index.html">会社概要</a>
+        <a href="privacy/index.html">プライバシーポリシー</a>
+        <a href="apply/index.html">来店予約フォーム</a>
+        <a href="contact/index.html">問い合わせフォーム</a>
+      </nav>
+    </div>
+
+    <div class="container site-footer__bottom">
+      <span>© KIMONO KYOSEN. ALL RIGHTS RESERVED.</span>
+      <a class="back-to-top" href="#top">PAGE TOP ↑</a>
+    </div>
+  </footer>
+
+  <div class="sp-fixed-cta" aria-label="固定CTA">
+    <a href="contact/index.html">お問い合わせ</a>
+    <a href="apply/index.html">来店予約</a>
+  </div>
+
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      const closeMenu = () => {
+        menuButton.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuButton.setAttribute('aria-label', 'メニューを開く');
+      };
+
+      const openMenu = () => {
+        menuButton.classList.add('is-open');
+        mobileMenu.classList.add('is-open');
+        document.body.classList.add('menu-open');
+        menuButton.setAttribute('aria-expanded', 'true');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuButton.setAttribute('aria-label', 'メニューを閉じる');
+      };
+
+      menuButton.addEventListener('click', () => {
+        if (menuButton.classList.contains('is-open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) closeMenu();
+      });
+
+      document.querySelectorAll('.faq-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const item = button.closest('.faq-item');
+          const willOpen = !item.classList.contains('is-open');
+          item.classList.toggle('is-open', willOpen);
+          button.setAttribute('aria-expanded', String(willOpen));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
